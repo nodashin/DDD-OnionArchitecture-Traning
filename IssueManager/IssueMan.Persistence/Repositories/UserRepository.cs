@@ -25,9 +25,6 @@ namespace IssueMan.Persistence.Repositories
         /// <returns>ユーザー</returns>
         public User FindById(string userId)
         {
-            var instance = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
-            AppDomain.CurrentDomain.SetData("DataDirectory", AppDomain.CurrentDomain.BaseDirectory);
-            var user = this.Db.Users.SingleOrDefault(u => u.Id == userId);
             return this.Db.Users.SingleOrDefault(u => u.Id == userId);
         }
     }
