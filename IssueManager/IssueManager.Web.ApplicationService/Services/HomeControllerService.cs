@@ -19,7 +19,7 @@ namespace IssueManager.Web.ApplicationService.Services
         /// <returns>ログイン可否</returns>
         public bool Login(LoginViewModel viewModel)
         {
-            throw new NotImplementedException();
+            return !(viewModel.Password == "1");
         }
     }
 }

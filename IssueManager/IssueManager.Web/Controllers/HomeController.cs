@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using IssueManager.Web.ApplicationService.Services;
 using IssueManager.Web.ApplicationService.ViewModels.Home;
 
 namespace IssueManager.Web.Controllers
@@ -12,6 +13,29 @@ namespace IssueManager.Web.Controllers
     /// </summary>
     public class HomeController : Controller
     {
+        /// <summary>
+        /// ホームサービス
+        /// </summary>
+        private IHomeControllerService HomeService { get; }
+
+        #region コンストラクタ
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        public HomeController() : this(new HomeControllerService())
+        {
+        }
+
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        /// <param name="homeService">ホームサービス</param>
+        public HomeController(IHomeControllerService homeService)
+        {
+            HomeService = homeService;
+        }
+        #endregion
+
         #region ログイン
         /// <summary>
         /// ログインViewを表示する。
@@ -37,7 +61,7 @@ namespace IssueManager.Web.Controllers
                 return View(viewModel);
 
             //ログイン可能か判定する。
-            if(viewModel.Password == "1")
+            if(!HomeService.Login(viewModel))
             {
                 this.ModelState.AddModelError("", "ユーザー名かパスワードが誤っています。");
                 return View(viewModel);
