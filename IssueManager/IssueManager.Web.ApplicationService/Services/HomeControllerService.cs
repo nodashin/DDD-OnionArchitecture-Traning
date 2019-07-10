@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using IssueManager.DomainService.Auth;
 using IssueManager.Web.ApplicationService.ViewModels.Home;
 
 namespace IssueManager.Web.ApplicationService.Services
@@ -12,6 +13,29 @@ namespace IssueManager.Web.ApplicationService.Services
     /// </summary>
     public class HomeControllerService : IHomeControllerService
     {
+        /// <summary>
+        /// 認証マネージャー
+        /// </summary>
+        private IAuthManager AuthManager { get; }
+
+        #region コンストラクタ
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        public HomeControllerService() : this(new AuthManager())
+        {
+        }
+
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        /// <param name="authManager">認証マネージャー</param>
+        public HomeControllerService(IAuthManager authManager)
+        {
+            this.AuthManager = authManager;
+        }
+        #endregion
+
         /// <summary>
         /// ログインする。
         /// </summary>

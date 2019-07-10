@@ -8,7 +8,7 @@ using IssueManager.Web.ApplicationService.ViewModels.Home;
 namespace IssueManager.Web.ApplicationService.Services
 {
     /// <summary>
-    /// ホームControllerサービス
+    /// ホームControllerサービスインタフェース
     /// </summary>
     public interface IHomeControllerService
     {
