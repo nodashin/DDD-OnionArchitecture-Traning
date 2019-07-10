@@ -78,6 +78,10 @@
       <Project>{901fd092-e113-41c9-9ee9-b999062781ce}</Project>
       <Name>IssueMan.Infrastructure</Name>
     </ProjectReference>
+    <ProjectReference Include="..\IssueManager.DomainService\IssueManager.DomainService.csproj">
+      <Project>{5bfa30ef-454f-409b-b602-4d4925937a2d}</Project>
+      <Name>IssueManager.DomainService</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
