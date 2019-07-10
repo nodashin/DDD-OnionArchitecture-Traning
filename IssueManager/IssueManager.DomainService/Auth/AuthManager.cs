@@ -12,6 +12,20 @@ namespace IssueManager.DomainService.Auth
     public class AuthManager : IAuthManager
     {
         /// <summary>
+        /// ユーザーRepository
+        /// </summary>
+        private IUserRepository UserRepository { get; }
+
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        /// <param name="userRepository">ユーザーRepository</param>
+        public AuthManager(IUserRepository userRepository)
+        {
+            UserRepository = userRepository;
+        }
+
+        /// <summary>
         /// ログインする。
         /// </summary>
         /// <param name="userId">ユーザーID</param>
@@ -19,7 +33,12 @@ namespace IssueManager.DomainService.Auth
         /// <returns>ログイン可否</returns>
         public bool Login(string userId, string password)
         {
-            throw new NotImplementedException();
+            var user = UserRepository.FindById(userId);
+            if (user == null)
+                return false;
+
+            return true;
+
         }
     }
 }

@@ -46,5 +46,11 @@
     <Compile Include="Auth\IUserRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IssueManager.Dmain\IssueManager.Dmain.csproj">
+      <Project>{30d3037e-40e7-46b6-9317-df9fb95feeda}</Project>
+      <Name>IssueManager.Dmain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
