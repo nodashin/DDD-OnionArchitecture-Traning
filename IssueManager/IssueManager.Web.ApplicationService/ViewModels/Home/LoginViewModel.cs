@@ -20,6 +20,7 @@ namespace IssueManager.Web.ApplicationService.ViewModels.Home
         /// </summary>
         [DisplayName("ユーザーID")]
         [MyRequired]
+        [OnlyHalfwidthAlphanumeric]
         public string UserId { get; set; }
 
         /// <summary>

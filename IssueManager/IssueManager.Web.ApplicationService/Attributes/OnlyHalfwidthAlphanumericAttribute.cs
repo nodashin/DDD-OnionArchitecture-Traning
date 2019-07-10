@@ -5,20 +5,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using IssueMan.Infrastructure.Regex;
 
 namespace IssueManager.Web.ApplicationService.Attributes
 {
     /// <summary>
-    /// 必須属性
+    /// 半角英数字のみ許容する検証属性
     /// </summary>
-    public class MyRequiredAttribute : RequiredAttribute, IClientValidatable
+    public class OnlyHalfwidthAlphanumericAttribute : RegularExpressionAttribute, IClientValidatable
     {
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        public MyRequiredAttribute():base()
+        public OnlyHalfwidthAlphanumericAttribute() : base(RegexProvider.OnlyHalfwidthAlphanumeric)
         {
-            ErrorMessage = "{0}を入力してください。";
+            ErrorMessage = "{0}は半角英数字で入力してください。";
         }
 
         /// <summary>
@@ -30,7 +31,7 @@ namespace IssueManager.Web.ApplicationService.Attributes
         public IEnumerable<ModelClientValidationRule> GetClientValidationRules(ModelMetadata metadata, ControllerContext context)
         {
             var errorMessage = this.FormatErrorMessage(metadata.GetDisplayName());
-            yield return new ModelClientValidationRequiredRule(errorMessage);
+            yield return new ModelClientValidationRegexRule(errorMessage, this.Pattern);
         }
     }
 }

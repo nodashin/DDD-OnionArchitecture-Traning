@@ -64,11 +64,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\MyRequiredAttribute.cs" />
+    <Compile Include="Attributes\OnlyHalfwidthAlphanumericAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Home\LoginViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IssueMan.Infrastructure\IssueMan.Infrastructure.csproj">
+      <Project>{901fd092-e113-41c9-9ee9-b999062781ce}</Project>
+      <Name>IssueMan.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
