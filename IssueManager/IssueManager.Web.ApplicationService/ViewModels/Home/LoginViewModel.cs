@@ -12,6 +12,7 @@ namespace IssueManager.Web.ApplicationService.ViewModels.Home
     /// </summary>
     public class LoginViewModel
     {
+        #region プロパティ
         /// <summary>
         /// ユーザーID
         /// </summary>
@@ -28,5 +29,20 @@ namespace IssueManager.Web.ApplicationService.ViewModels.Home
         /// ログイン後のリダイレクトURL
         /// </summary>
         public string ReturnUrl { get; set; }
+        #endregion
+
+        #region メソッド
+
+        #region Factory
+        /// <summary>
+        /// ログイン後のリダイレクトURLからログインViewModelを生成する。
+        /// </summary>
+        /// <param name="returnUrl">ログイン後のリダイレクトURL</param>
+        /// <returns>ログインViewModel</returns>
+        public static LoginViewModel CreateByReturnUrl(string returnUrl)
+            => new LoginViewModel() { ReturnUrl = returnUrl };
+        #endregion
+
+        #endregion
     }
 }
