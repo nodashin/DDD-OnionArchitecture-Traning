@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using IssueManager.Web.ApplicationService.Attributes;
 
 namespace IssueManager.Web.ApplicationService.ViewModels.Home
 {
@@ -17,12 +19,15 @@ namespace IssueManager.Web.ApplicationService.ViewModels.Home
         /// ユーザーID
         /// </summary>
         [DisplayName("ユーザーID")]
+        [MyRequired]
         public string UserId { get; set; }
 
         /// <summary>
         /// パスワード
         /// </summary>
         [DisplayName("パスワード")]
+        [DataType(DataType.Password)]
+        [MyRequired]
         public string Password { get; set; }
 
         /// <summary>
@@ -30,7 +35,7 @@ namespace IssueManager.Web.ApplicationService.ViewModels.Home
         /// </summary>
         public string ReturnUrl { get; set; }
         #endregion
-
+          
         #region メソッド
 
         #region Factory
