@@ -20,8 +20,30 @@ namespace IssueManager.Web.Controllers
         /// <returns>ログインView</returns>
         public ActionResult Login(string returnUrl)
         {
-            var viewMode = LoginViewModel.CreateByReturnUrl(returnUrl);
-            return View(viewMode);
+            var viewModel = LoginViewModel.CreateByReturnUrl(returnUrl);
+            return View(viewModel);
+        }
+
+        /// <summary>
+        /// ログインし、課題一覧View(リダイレクトURLが指定されている場合はそちらのView)を表示する。
+        /// </summary>
+        /// <param name="viewModel">ログインViewModel</param>
+        /// <returns>課題一覧View(リダイレクトURLが指定されている場合はそちらのView)</returns>
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Login(LoginViewModel viewModel)
+        {
+            if (!this.ModelState.IsValid)
+                return View(viewModel);
+
+            //ログイン可能か判定する。
+            if(viewModel.Password == "1")
+            {
+                this.ModelState.AddModelError("", "ユーザー名かパスワードが誤っています。");
+                return View(viewModel);
+            }
+
+            return View(viewModel);
         }
         #endregion
 
