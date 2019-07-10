@@ -219,6 +219,10 @@
     <TypeScriptCompile Include="Scripts\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\IssueMan.Persistence\IssueMan.Persistence.csproj">
+      <Project>{11d2a463-3fbc-4f5f-99c2-c7e1440fed1e}</Project>
+      <Name>IssueMan.Persistence</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IssueManager.Web.ApplicationService\IssueManager.Web.ApplicationService.csproj">
       <Project>{ac8d17b9-9c8d-4ea3-bfcd-c3dcb010c7d2}</Project>
       <Name>IssueManager.Web.ApplicationService</Name>

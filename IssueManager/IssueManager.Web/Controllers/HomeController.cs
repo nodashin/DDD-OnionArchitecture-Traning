@@ -18,14 +18,6 @@ namespace IssueManager.Web.Controllers
         /// </summary>
         private IHomeControllerService HomeService { get; }
 
-        #region コンストラクタ
-        /// <summary>
-        /// コンストラクタ
-        /// </summary>
-        public HomeController() : this(new HomeControllerService())
-        {
-        }
-
         /// <summary>
         /// コンストラクタ
         /// </summary>
@@ -34,7 +26,6 @@ namespace IssueManager.Web.Controllers
         {
             HomeService = homeService;
         }
-        #endregion
 
         #region ログイン
         /// <summary>

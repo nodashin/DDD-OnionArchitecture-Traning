@@ -18,14 +18,6 @@ namespace IssueManager.Web.ApplicationService.Services
         /// </summary>
         private IAuthManager AuthManager { get; }
 
-        #region コンストラクタ
-        /// <summary>
-        /// コンストラクタ
-        /// </summary>
-        public HomeControllerService() : this(new AuthManager())
-        {
-        }
-
         /// <summary>
         /// コンストラクタ
         /// </summary>
@@ -34,7 +26,6 @@ namespace IssueManager.Web.ApplicationService.Services
         {
             this.AuthManager = authManager;
         }
-        #endregion
 
         /// <summary>
         /// ログインする。
