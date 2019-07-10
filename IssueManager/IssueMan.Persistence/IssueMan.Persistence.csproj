@@ -76,6 +76,7 @@
     <Compile Include="DI\ResolverConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\MyDbContext.cs" />
+    <Compile Include="Repositories\MyDbInitializer.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>

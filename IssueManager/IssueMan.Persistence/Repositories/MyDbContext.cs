@@ -17,5 +17,14 @@ namespace IssueMan.Persistence.Repositories
         /// ユーザー
         /// </summary>
         public DbSet<User> Users { get; set; }
+
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        public MyDbContext()
+        {
+            //DBに初期データを設定する。
+            Database.SetInitializer(new MyDbInitializer());
+        }
     }
 }

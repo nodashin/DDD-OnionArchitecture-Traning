@@ -38,7 +38,6 @@ namespace IssueManager.DomainService.Auth
                 return false;
 
             return true;
-
         }
     }
 }
