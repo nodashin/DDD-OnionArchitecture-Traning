@@ -66,6 +66,8 @@
     <Compile Include="Attributes\MyRequiredAttribute.cs" />
     <Compile Include="Attributes\OnlyHalfwidthAlphanumericAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\HomeControllerService.cs" />
+    <Compile Include="Services\IHomeControllerService.cs" />
     <Compile Include="ViewModels\Home\LoginViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
