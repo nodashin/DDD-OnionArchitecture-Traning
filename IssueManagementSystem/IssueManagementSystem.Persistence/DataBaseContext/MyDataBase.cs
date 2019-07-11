@@ -17,5 +17,16 @@ namespace IssueManagementSystem.Persistence.DataBaseContext
         /// ユーザー
         /// </summary>
         public DbSet<User> Users { get; set; }
+
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        /// <remarks>
+        /// 初期データを投入する。
+        /// </remarks>
+        public MyDataBase()
+        {
+            Database.SetInitializer(new MyDataBaseInitializer());
+        }
     }
 }

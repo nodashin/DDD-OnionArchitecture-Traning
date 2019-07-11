@@ -229,12 +229,8 @@
       <Project>{00D321C6-217F-43BD-9EB8-853A7BAD6BFC}</Project>
       <Name>IssueManagementSystem.ApplicationService.Web</Name>
     </ProjectReference>
-    <ProjectReference Include="..\IssueManagementSystem.Persistence\IssueManagementSystem.Persistence.csproj">
-      <Project>{D1A6055D-8C11-484B-8AB3-3C049490D1E1}</Project>
-      <Name>IssueManagementSystem.Persistence</Name>
-    </ProjectReference>
     <ProjectReference Include="..\IssueManagementSystem.Platform\IssueManagementSystem.Platform.csproj">
-      <Project>{FF8AAB16-DCBC-4809-8FCC-280EBB376185}</Project>
+      <Project>{ff8aab16-dcbc-4809-8fcc-280ebb376185}</Project>
       <Name>IssueManagementSystem.Platform</Name>
     </ProjectReference>
   </ItemGroup>
