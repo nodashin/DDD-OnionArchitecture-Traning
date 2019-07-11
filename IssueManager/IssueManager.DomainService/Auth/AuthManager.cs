@@ -33,11 +33,26 @@ namespace IssueManager.DomainService.Auth
         /// <returns>ログイン可否</returns>
         public bool Login(string userId, string password)
         {
+            //ユーザーIDが一致しているか判定する。
             var user = UserRepository.FindById(userId);
             if (user == null)
                 return false;
 
+            //パスワードが一致しているか判定する。
+            if (!MatchPassword(user.HashPassword, password))
+                return false;
+
             return true;
         }
+
+        /// <summary>
+        /// パスワードとハッシュパスワードが一致しているか判定する。
+        /// </summary>
+        /// <param name="password">パスワード</param>
+        /// <param name="hashPassword">ハッシュパスワード</param>
+        /// <returns>一致有無</returns>
+        private bool MatchPassword(string password, string hashPassword)
+            => BCrypt.Net.BCrypt.HashPassword(password) == hashPassword;
+            
     }
 }
