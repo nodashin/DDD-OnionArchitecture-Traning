@@ -13,18 +13,32 @@ namespace IssueManagementSystem.DomainService.Auth
     /// </summary>
     public class AuthManager : IAuthManager
     {
+        #region プロパティ
         /// <summary>
         /// ユーザーRepository
         /// </summary>
         private IUserRepository UserRepository { get; }
 
         /// <summary>
+        /// パスワードハッシュ
+        /// </summary>
+        private IPasswordHasher PasswordHasher { get; }
+
+        /// <summary>
+        /// 認証
+        /// </summary>
+        public IMyAuthentication Authentication { get; }
+        #endregion
+
+        /// <summary>
         /// コンストラクタ
         /// </summary>
         /// <param name="userRepository">ユーザーRepository</param>
-        public AuthManager(IUserRepository userRepository)
+        public AuthManager(IUserRepository userRepository, IPasswordHasher passwordHasher, IMyAuthentication authentication)
         {
             UserRepository = userRepository;
+            PasswordHasher = passwordHasher;
+            Authentication = authentication;
         }
 
         /// <summary>
@@ -35,12 +49,14 @@ namespace IssueManagementSystem.DomainService.Auth
         /// <returns>ログイン成否</returns>
         public bool Login(string userId, string password)
         {
-            //ユーザーIDが一致するか判定する。
             var user = UserRepository.FindById(userId);
             if (user == null)
                 return false;
 
-            FormsAuthentication.SetAuthCookie(userId, false);
+            if (!PasswordHasher.MatchPassword(password, user.HashPassword))
+                return false;
+
+            Authentication.Authenticate(userId);
 
             return true;
         }

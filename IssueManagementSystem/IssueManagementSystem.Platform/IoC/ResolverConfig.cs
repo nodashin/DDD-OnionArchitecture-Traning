@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using IssueManagementSystem.ApplicationService.Web.Services;
 using IssueManagementSystem.DomainService.Auth;
 using IssueManagementSystem.Persistence.Repositories;
+using IssueManagementSystem.Platform.Security;
 using Ninject;
 
 namespace IssueManagementSystem.Platform.IoC
@@ -31,6 +32,10 @@ namespace IssueManagementSystem.Platform.IoC
 
             //Repository
             kernel.Bind<IUserRepository>().To<UserRepository>();
+
+            //Platform
+            kernel.Bind<IPasswordHasher>().To<PasswordHasher>();
+            kernel.Bind<IMyAuthentication>().To<MyAuthentication>();
 
             DependencyResolver.SetResolver(new MyDependencyResolver(kernel));
         }
