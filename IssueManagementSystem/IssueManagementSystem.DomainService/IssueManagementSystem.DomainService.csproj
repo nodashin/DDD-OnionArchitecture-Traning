@@ -41,7 +41,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Auth\AuthManager.cs" />
+    <Compile Include="Auth\IAuthManager.cs" />
+    <Compile Include="Auth\IUserRepository.cs" />
+    <Compile Include="Commons\IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IssueManagementSystem.DomainModel\IssueManagementSystem.DomainModel.csproj">
+      <Project>{7C4AEBE8-8078-45C9-B334-C0A525EFD9D9}</Project>
+      <Name>IssueManagementSystem.DomainModel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 using IssueManagementSystem.ApplicationService.Web.Services;
+using IssueManagementSystem.DomainService.Auth;
+using IssueManagementSystem.Persistence.Repositories;
 using Ninject;
 
 namespace IssueManagementSystem.Persistence.IoC
@@ -23,6 +25,12 @@ namespace IssueManagementSystem.Persistence.IoC
 
             //ApplicationService
             kernel.Bind<IHomeApplicationService>().To<HomeApplicationService>();
+
+            //DomainService
+            kernel.Bind<IAuthManager>().To<AuthManager>();
+
+            //Repository
+            kernel.Bind<IUserRepository>().To<UserRepository>();
 
             DependencyResolver.SetResolver(new MyDependencyResolver(kernel));
         }

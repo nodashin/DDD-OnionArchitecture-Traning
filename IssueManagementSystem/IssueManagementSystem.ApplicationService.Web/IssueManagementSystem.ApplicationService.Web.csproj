@@ -72,5 +72,11 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IssueManagementSystem.DomainService\IssueManagementSystem.DomainService.csproj">
+      <Project>{B9CA68B6-1187-407C-B85E-D5D48111384C}</Project>
+      <Name>IssueManagementSystem.DomainService</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

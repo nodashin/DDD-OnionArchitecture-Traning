@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using IssueManagementSystem.ApplicationService.Web.ViewModels.Home;
+using IssueManagementSystem.DomainService.Auth;
 
 namespace IssueManagementSystem.ApplicationService.Web.Services
 {
@@ -13,13 +14,27 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
     public class HomeApplicationService : IHomeApplicationService
     {
         /// <summary>
+        /// 認証マネージャー
+        /// </summary>
+        private IAuthManager AuthManager { get; }
+
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        /// <param name="authManager">認証マネージャー</param>
+        public HomeApplicationService(IAuthManager authManager)
+        {
+            AuthManager = authManager;
+        }
+
+        /// <summary>
         /// ログインする。
         /// </summary>
-        /// <param name="loginViewModel">ログインViewModel</param>
-        /// <returns>ログイン成否
-        public bool Login(LoginViewModel loginViewModel)
+        /// <param name="viewModel">ログインViewModel</param>
+        /// <returns>ログイン成否</returns>
+        public bool Login(LoginViewModel viewModel)
         {
-            return false;
+            return AuthManager.Login(viewModel.UserId, viewModel.Password);
         }
     }
 }

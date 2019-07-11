@@ -45,6 +45,7 @@ namespace IssueManagementSystem.Web.Controllers
         /// <param name="viewModel">ログインViewModel</param>
         /// <returns>課題一覧View(リダイレクト先が指定されている場合はリダイレクト先View)</returns>
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Login(LoginViewModel viewModel)
         {
             if (!ModelState.IsValid)
