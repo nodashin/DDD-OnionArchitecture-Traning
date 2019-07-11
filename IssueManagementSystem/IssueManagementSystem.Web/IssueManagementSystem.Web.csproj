@@ -222,6 +222,10 @@
       <Project>{00D321C6-217F-43BD-9EB8-853A7BAD6BFC}</Project>
       <Name>IssueManagementSystem.ApplicationService.Web</Name>
     </ProjectReference>
+    <ProjectReference Include="..\IssueManagementSystem.Persistence\IssueManagementSystem.Persistence.csproj">
+      <Project>{D1A6055D-8C11-484B-8AB3-3C049490D1E1}</Project>
+      <Name>IssueManagementSystem.Persistence</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
