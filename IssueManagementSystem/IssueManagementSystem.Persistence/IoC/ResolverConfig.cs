@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using IssueManagementSystem.ApplicationService.Web.Services;
 using Ninject;
 
 namespace IssueManagementSystem.Persistence.IoC
@@ -19,6 +20,9 @@ namespace IssueManagementSystem.Persistence.IoC
         public static void RegisterResolvers()
         {
             var kernel = new StandardKernel();
+
+            //ApplicationService
+            kernel.Bind<IHomeApplicationService>().To<HomeApplicationService>();
 
             DependencyResolver.SetResolver(new MyDependencyResolver(kernel));
         }

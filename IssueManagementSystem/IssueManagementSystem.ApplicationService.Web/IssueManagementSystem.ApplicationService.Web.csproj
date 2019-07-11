@@ -65,6 +65,8 @@
   <ItemGroup>
     <Compile Include="Attributes\MyRequiredAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\HomeApplicationService.cs" />
+    <Compile Include="Services\IHomeApplicationService.cs" />
     <Compile Include="ViewModels\Home\LoginViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

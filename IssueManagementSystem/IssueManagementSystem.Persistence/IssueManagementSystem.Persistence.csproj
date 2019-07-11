@@ -72,6 +72,11 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\IssueManagementSystem.ApplicationService.Web\IssueManagementSystem.ApplicationService.Web.csproj">
+      <Project>{00D321C6-217F-43BD-9EB8-853A7BAD6BFC}</Project>
+      <Name>IssueManagementSystem.ApplicationService.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
