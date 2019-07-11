@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Auth\AuthManager.cs" />
+    <Compile Include="Auth\ILoginUserRepository.cs" />
     <Compile Include="Auth\IMyAuthentication.cs" />
     <Compile Include="Auth\IAuthManager.cs" />
     <Compile Include="Auth\IPasswordHasher.cs" />

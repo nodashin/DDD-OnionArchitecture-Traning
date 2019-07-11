@@ -32,6 +32,7 @@ namespace IssueManagementSystem.Platform.IoC
 
             //Repository
             kernel.Bind<IUserRepository>().To<UserRepository>();
+            kernel.Bind<ILoginUserRepository>().To<LoginUserRepository>();
 
             //Platform
             kernel.Bind<IPasswordHasher>().To<PasswordHasher>();

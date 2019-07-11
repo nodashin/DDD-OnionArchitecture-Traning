@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Security;
+using IssueManagementSystem.DomainModel.Auth;
 
 namespace IssueManagementSystem.DomainService.Auth
 {
@@ -18,6 +19,11 @@ namespace IssueManagementSystem.DomainService.Auth
         /// ユーザーRepository
         /// </summary>
         private IUserRepository UserRepository { get; }
+
+        /// <summary>
+        /// ログインユーザーRepository
+        /// </summary>
+        public ILoginUserRepository LoginUserRepository { get; }
 
         /// <summary>
         /// パスワードハッシュ
@@ -34,9 +40,16 @@ namespace IssueManagementSystem.DomainService.Auth
         /// コンストラクタ
         /// </summary>
         /// <param name="userRepository">ユーザーRepository</param>
-        public AuthManager(IUserRepository userRepository, IPasswordHasher passwordHasher, IMyAuthentication authentication)
+        /// <param name="loginUserRepository"></param>
+        /// <param name="authentication"></param>
+        /// <param name="passwordHasher"></param>
+        public AuthManager(IUserRepository userRepository, 
+                           ILoginUserRepository loginUserRepository, 
+                           IPasswordHasher passwordHasher, 
+                           IMyAuthentication authentication)
         {
             UserRepository = userRepository;
+            LoginUserRepository = loginUserRepository;
             PasswordHasher = passwordHasher;
             Authentication = authentication;
         }
@@ -57,6 +70,9 @@ namespace IssueManagementSystem.DomainService.Auth
                 return false;
 
             Authentication.Authenticate(userId);
+
+            var loginUser = LoginUser.CreateByUser(user);
+            LoginUserRepository.SetLoginUser(loginUser);
 
             return true;
         }

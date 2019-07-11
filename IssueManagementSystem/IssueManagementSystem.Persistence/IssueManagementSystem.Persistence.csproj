@@ -75,6 +75,7 @@
     <Compile Include="DataBaseContext\MyDataBase.cs" />
     <Compile Include="DataBaseContext\MyDataBaseInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\LoginUserRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
