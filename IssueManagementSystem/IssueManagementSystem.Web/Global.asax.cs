@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using IssueManagementSystem.Persistence.IoC;
+using IssueManagementSystem.Platform.IoC;
 
 namespace IssueManagementSystem.Web
 {

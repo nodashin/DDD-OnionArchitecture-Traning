@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using Ninject;
 
-namespace IssueManagementSystem.Persistence.IoC
+namespace IssueManagementSystem.Platform.IoC
 {
     /// <summary>
     /// 依存性リゾルバー

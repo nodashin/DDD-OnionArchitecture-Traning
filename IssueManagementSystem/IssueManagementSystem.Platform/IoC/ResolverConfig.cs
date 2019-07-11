@@ -9,7 +9,7 @@ using IssueManagementSystem.DomainService.Auth;
 using IssueManagementSystem.Persistence.Repositories;
 using Ninject;
 
-namespace IssueManagementSystem.Persistence.IoC
+namespace IssueManagementSystem.Platform.IoC
 {
     /// <summary>
     /// リゾルバー設定
