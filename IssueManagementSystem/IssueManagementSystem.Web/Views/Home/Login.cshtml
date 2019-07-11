@@ -18,6 +18,9 @@
     <hr class="my-4">
     @using (Html.BeginForm())
     {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummaryAlert()
+        
         <div class="form-group">
             @Html.LabelFor(m => m.UserId)
             @Html.EditorFor(m => m.UserId, new { htmlAttributes = new { @class = "form-control" } })

@@ -27,6 +27,7 @@ namespace IssueManagementSystem.ApplicationService.Web.ViewModels.Home
         /// パスワード
         /// </summary>
         [DisplayName("パスワード")]
+        [DataType(DataType.Password)]
         [MyRequired]
         public string Password { get; set; }
 
