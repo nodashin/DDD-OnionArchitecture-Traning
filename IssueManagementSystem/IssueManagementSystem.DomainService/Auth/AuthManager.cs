@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
+using System.Web.Security;
 
 namespace IssueManagementSystem.DomainService.Auth
 {
@@ -37,6 +39,8 @@ namespace IssueManagementSystem.DomainService.Auth
             var user = UserRepository.FindById(userId);
             if (user == null)
                 return false;
+
+            FormsAuthentication.SetAuthCookie(userId, false);
 
             return true;
         }

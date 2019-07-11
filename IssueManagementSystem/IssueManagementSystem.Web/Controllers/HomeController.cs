@@ -33,6 +33,7 @@ namespace IssueManagementSystem.Web.Controllers
         /// </summary>
         /// <param name="returnUrl">ログイン後のリダイレクトURL</param>
         /// <returns>ログインView</returns>
+        [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
             var viewModel = LoginViewModel.CreateByReturnUrl(returnUrl);
@@ -44,6 +45,7 @@ namespace IssueManagementSystem.Web.Controllers
         /// </summary>
         /// <param name="viewModel">ログインViewModel</param>
         /// <returns>課題一覧View(リダイレクト先が指定されている場合はリダイレクト先View)</returns>
+        [AllowAnonymous]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Login(LoginViewModel viewModel)
