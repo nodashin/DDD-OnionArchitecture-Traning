@@ -63,6 +63,17 @@ namespace IssueManagementSystem.Web.Controllers
                 return Redirect(viewModel.ReturnUrl);
             return RedirectToAction("Index");
         }
+
+        /// <summary>
+        /// ログイン後メニューViewを表示する。
+        /// </summary>
+        /// <returns></returns>
+        [ChildActionOnly]
+        [AllowAnonymous]
+        public ActionResult LoggedInMenu()
+        {
+            return PartialView("_LoggedInMenu");
+        }
         #endregion
 
         #region あとで消す
