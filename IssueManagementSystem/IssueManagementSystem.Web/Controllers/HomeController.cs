@@ -48,7 +48,7 @@ namespace IssueManagementSystem.Web.Controllers
         [AllowAnonymous]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(LoginViewModel viewModel)
+        public ActionResult Login([Bind(Include ="UserId,Password,ReturnUrl")]LoginViewModel viewModel)
         {
             if (!ModelState.IsValid)
                 return View(viewModel);
