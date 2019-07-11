@@ -27,5 +27,15 @@ namespace IssueMan.Persistence.Repositories
         {
             return this.Db.Users.SingleOrDefault(u => u.Id == userId);
         }
+
+        /// <summary>
+        ///指定したユーザーIDのユーザーが存在するか確認する。
+        /// </summary>
+        /// <param name="userId">ユーザーID</param>
+        /// <returns>存在有無</returns>
+        public bool Exists(string userId)
+        {
+            return this.FindById(userId) != null;
+        }
     }
 }

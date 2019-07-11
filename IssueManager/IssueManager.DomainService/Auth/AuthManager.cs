@@ -34,25 +34,33 @@ namespace IssueManager.DomainService.Auth
         public bool Login(string userId, string password)
         {
             //ユーザーIDが一致しているか判定する。
-            var user = UserRepository.FindById(userId);
-            if (user == null)
+            if(!UserRepository.Exists(userId))
                 return false;
 
             //パスワードが一致しているか判定する。
-            if (!MatchPassword(user.HashPassword, password))
+            if (!MatchPassword(password, userId))
                 return false;
+
+
 
             return true;
         }
 
         /// <summary>
-        /// パスワードとハッシュパスワードが一致しているか判定する。
+        /// パスワードがユーザーIDのユーザーと一致しているか確認する。
         /// </summary>
         /// <param name="password">パスワード</param>
-        /// <param name="hashPassword">ハッシュパスワード</param>
+        /// <param name="userId">パスワードが一致しているか確認するユーザーのユーザーID</param>
         /// <returns>一致有無</returns>
-        private bool MatchPassword(string password, string hashPassword)
-            => BCrypt.Net.BCrypt.HashPassword(password) == hashPassword;
-            
+        private bool MatchPassword(string password, string userId)
+        {
+            var user = UserRepository.FindById(userId);
+            if (user == null)
+                throw new ArgumentException("指定したユーザーIDのユーザーが存在しません。");
+
+            var hashPassword = BCrypt.Net.BCrypt.HashPassword(password);
+
+            return hashPassword == user.HashPassword;
+        }
     }
 }

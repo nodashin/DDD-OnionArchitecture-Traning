@@ -18,5 +18,12 @@ namespace IssueManager.DomainService.Auth
         /// <param name="userId">ユーザーID</param>
         /// <returns>ユーザー</returns>
         User FindById(string userId);
+
+        /// <summary>
+        ///指定したユーザーIDのユーザーが存在するか確認する。
+        /// </summary>
+        /// <param name="userId">ユーザーID</param>
+        /// <returns>存在有無</returns>
+        bool Exists(string userId);
     }
 }
