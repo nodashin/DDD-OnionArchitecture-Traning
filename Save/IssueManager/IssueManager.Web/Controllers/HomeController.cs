@@ -33,6 +33,7 @@ namespace IssueManager.Web.Controllers
         /// </summary>
         /// <param name="returnUrl">ログイン後にリダイレクトするURL</param>
         /// <returns>ログインView</returns>
+        [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
             var viewModel = LoginViewModel.CreateByReturnUrl(returnUrl);
@@ -46,19 +47,24 @@ namespace IssueManager.Web.Controllers
         /// <returns>課題一覧View(リダイレクトURLが指定されている場合はそちらのView)</returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [AllowAnonymous]
         public ActionResult Login(LoginViewModel viewModel)
         {
             if (!this.ModelState.IsValid)
                 return View(viewModel);
 
             //ログイン可能か判定する。
-            if(!HomeService.Login(viewModel))
+            if (!HomeService.Login(viewModel))
             {
                 this.ModelState.AddModelError("", "ユーザー名かパスワードが誤っています。");
                 return View(viewModel);
             }
 
-            return View(viewModel);
+            //ログイン後のViewへリダイレクトする。
+            if (Url.IsLocalUrl(viewModel.ReturnUrl))
+                return Redirect(viewModel.ReturnUrl);
+
+            return View("Index");
         }
         #endregion
 

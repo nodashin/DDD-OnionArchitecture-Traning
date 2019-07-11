@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Security;
 
 namespace IssueManager.DomainService.Auth
 {
@@ -41,7 +42,8 @@ namespace IssueManager.DomainService.Auth
             if (!MatchPassword(password, userId))
                 return false;
 
-
+            //認証する。
+            FormsAuthentication.SetAuthCookie(userId, false);
 
             return true;
         }
@@ -58,9 +60,15 @@ namespace IssueManager.DomainService.Auth
             if (user == null)
                 throw new ArgumentException("指定したユーザーIDのユーザーが存在しません。");
 
-            var hashPassword = BCrypt.Net.BCrypt.HashPassword(password);
-
-            return hashPassword == user.HashPassword;
+            return BCrypt.Net.BCrypt.Verify(password, user.HashPassword);
         }
+
+        /// <summary>
+        /// パスワードをハッシュ化する。
+        /// </summary>
+        /// <param name="password">ハッシュ化するパスワード</param>
+        /// <returns>ハッシュパスワード</returns>
+        public static string HashPassword(string password)
+            => BCrypt.Net.BCrypt.HashPassword(password);
     }
 }

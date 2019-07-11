@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using IssueManager.Dmain.Auth;
 using IssueManager.DomainService.Auth;
 
-namespace IssueMan.Persistence.Repositories
+namespace IssueMan.Persistence.Repositories.Auth
 {
     /// <summary>
     /// ユーザーRepository

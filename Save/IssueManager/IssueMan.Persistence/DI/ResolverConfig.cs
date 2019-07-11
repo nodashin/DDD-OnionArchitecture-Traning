@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
-using IssueMan.Persistence.Repositories;
+using IssueMan.Persistence.Repositories.Auth;
 using IssueManager.DomainService.Auth;
 using IssueManager.Web.ApplicationService.Services;
 using Ninject;
