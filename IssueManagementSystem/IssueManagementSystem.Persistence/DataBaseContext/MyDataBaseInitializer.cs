@@ -60,7 +60,7 @@ namespace IssueManagementSystem.Persistence.DataBaseContext
 
             #region 課題
             var issues = new List<Issue>();
-            for (int i = 1; i <= 10; i++)
+            for (int i = 1; i <= 20; i++)
             {
                 var issue = new Issue()
                 {
