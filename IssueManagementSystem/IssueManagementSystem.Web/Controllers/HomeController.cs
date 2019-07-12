@@ -61,7 +61,7 @@ namespace IssueManagementSystem.Web.Controllers
 
             if (Url.IsLocalUrl(viewModel.ReturnUrl))
                 return Redirect(viewModel.ReturnUrl);
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Issue");
         }
 
         /// <summary>

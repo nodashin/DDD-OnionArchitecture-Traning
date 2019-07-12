@@ -1,0 +1,35 @@
+﻿@model IssueManagementSystem.ApplicationService.Web.ViewModels.Issue.IssueIndexViewModel
+
+@{
+    ViewBag.Title = "課題一覧";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Search", "Issue"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummaryAlert()
+
+    <button type="button" class="btn btn-primary">検索</button>
+}
+
+<hr />
+
+<table class="table table-striped table-hover">
+    <thead class="thead-light">
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.Issues.First().IssueId)</th>
+            <th>@Html.DisplayNameFor(m => m.Issues.First().Title)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            @foreach (var issue in Model.Issues)
+            {
+                <td>@Html.ActionLink(issue.IssueId.ToString(), "Edit", new { IssueId = issue.IssueId})</td>
+                <td>@Html.DisplayFor(m => issue.Title)</td>
+            }
+        </tr>
+    </tbody>
+</table>

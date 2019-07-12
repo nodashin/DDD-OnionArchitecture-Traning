@@ -22,6 +22,9 @@ namespace IssueManagementSystem.ApplicationService.Web.ViewModels.Issue
         /// <summary>
         /// 課題群
         /// </summary>
+        /// <remarks>
+        /// データが0件でもnullにはならず、Countが0の状態となる。
+        /// </remarks>
         public List<IssueIndexIssueViewModel> Issues { get; set; }
         #endregion
 
