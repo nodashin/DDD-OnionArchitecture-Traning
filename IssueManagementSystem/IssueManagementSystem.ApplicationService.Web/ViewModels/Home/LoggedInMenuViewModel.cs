@@ -26,7 +26,7 @@ namespace IssueManagementSystem.ApplicationService.Web.ViewModels.Home
         /// <summary>
         /// ログインユーザー名
         /// </summary>
-        public string LoginUserName { get => LoginUser?.UserId; }
+        public string LoginUserName { get => LoginUser?.UserName; }
 
         /// <summary>
         /// ログインユーザー
