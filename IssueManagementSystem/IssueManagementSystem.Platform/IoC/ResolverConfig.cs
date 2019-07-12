@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using IssueManagementSystem.ApplicationService.Web.Services;
 using IssueManagementSystem.DomainService.Auth;
+using IssueManagementSystem.DomainService.Issue;
 using IssueManagementSystem.Persistence.Repositories;
 using IssueManagementSystem.Platform.Security;
 using Ninject;
@@ -26,6 +27,7 @@ namespace IssueManagementSystem.Platform.IoC
 
             //ApplicationService
             kernel.Bind<IHomeApplicationService>().To<HomeApplicationService>();
+            kernel.Bind<IIssueApplicationService>().To<IssueApplicationService>();
 
             //DomainService
             kernel.Bind<IAuthManager>().To<AuthManager>();
@@ -33,6 +35,7 @@ namespace IssueManagementSystem.Platform.IoC
             //Repository
             kernel.Bind<IUserRepository>().To<UserRepository>();
             kernel.Bind<ILoginUserRepository>().To<LoginUserRepository>();
+            kernel.Bind<IIssueRepository>().To<IssueRepository>();
 
             //Platform
             kernel.Bind<IPasswordHasher>().To<PasswordHasher>();

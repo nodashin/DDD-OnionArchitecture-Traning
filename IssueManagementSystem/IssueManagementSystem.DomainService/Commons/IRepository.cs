@@ -14,6 +14,12 @@ namespace IssueManagementSystem.DomainService.Commons
     public interface IRepository<TDomainModel, TId>
     {
         /// <summary>
+        /// 全DomainModelを取得する。
+        /// </summary>
+        /// <returns>全DomainModel</returns>
+        IQueryable<TDomainModel> FindAll();
+
+        /// <summary>
         /// IDからDmainModelを取得する。
         /// </summary>
         /// <param name="id">ID</param>

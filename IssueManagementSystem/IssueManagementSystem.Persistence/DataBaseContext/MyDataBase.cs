@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using IssueManagementSystem.DomainModel.Auth;
+using IssueManagementSystem.DomainModel.Issue;
 
 namespace IssueManagementSystem.Persistence.DataBaseContext
 {
@@ -17,6 +18,11 @@ namespace IssueManagementSystem.Persistence.DataBaseContext
         /// ユーザー
         /// </summary>
         public DbSet<User> Users { get; set; }
+
+        /// <summary>
+        /// 課題
+        /// </summary>
+        public DbSet<Issue> Issues { get; set; }
 
         /// <summary>
         /// コンストラクタ

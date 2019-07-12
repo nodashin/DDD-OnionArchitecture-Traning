@@ -51,6 +51,7 @@
     <Compile Include="Auth\LoginResult.cs" />
     <Compile Include="Auth\PasswordChangeResult.cs" />
     <Compile Include="Commons\IRepository.cs" />
+    <Compile Include="Issue\IIssueRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -67,9 +67,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\HomeApplicationService.cs" />
     <Compile Include="Services\IHomeApplicationService.cs" />
+    <Compile Include="Services\IIssueApplicationService.cs" />
+    <Compile Include="Services\IssueApplicationService.cs" />
     <Compile Include="ViewModels\Home\LoggedInMenuViewModel.cs" />
     <Compile Include="ViewModels\Home\LoginViewModel.cs" />
     <Compile Include="ViewModels\Home\PasswordChangeViewModel.cs" />
+    <Compile Include="ViewModels\Issue\IssueIndexViewModels.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

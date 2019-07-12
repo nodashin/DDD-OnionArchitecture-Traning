@@ -20,13 +20,22 @@ namespace IssueManagementSystem.Persistence.Repositories
         private readonly MyDataBase Db = new MyDataBase();
 
         /// <summary>
+        /// 全ユーザーを取得する。
+        /// </summary>
+        /// <returns>全ユーザー</returns>
+        public IQueryable<User> FindAll()
+        {
+            return Db.Users;
+        }
+
+        /// <summary>
         /// ユーザーIDからユーザーを取得する。
         /// </summary>
         /// <param name="userId">ユーザーID</param>
         /// <returns>ユーザー</returns>
         public User FindById(string userId)
         {
-            return Db.Users.SingleOrDefault(u => u.UserId == userId);
+            return FindAll().SingleOrDefault(u => u.UserId == userId);
         }
 
         /// <summary>
