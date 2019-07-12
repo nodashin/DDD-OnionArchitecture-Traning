@@ -16,7 +16,7 @@ namespace IssueManagementSystem.ApplicationService.Web.ViewModels.Home
         /// <summary>
         /// ログイン有無
         /// </summary>
-        public bool LoggedIn { get => LoginUser != null; }
+        public bool IsLoggedIn { get => LoginUser != null; }
 
         /// <summary>
         /// ログインユーザーID

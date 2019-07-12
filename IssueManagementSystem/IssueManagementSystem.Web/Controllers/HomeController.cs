@@ -72,7 +72,8 @@ namespace IssueManagementSystem.Web.Controllers
         [AllowAnonymous]
         public ActionResult LoggedInMenu()
         {
-            return PartialView("_LoggedInMenu");
+            var viewModel = HomeApplicationService.GetLoggedInMenuViewModel();
+            return PartialView("_LoggedInMenu", viewModel);
         }
         #endregion
 

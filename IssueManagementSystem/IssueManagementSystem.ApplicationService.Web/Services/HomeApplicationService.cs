@@ -36,5 +36,15 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
         {
             return AuthManager.Login(viewModel.UserId, viewModel.Password);
         }
+
+        /// <summary>
+        /// ログイン後メニューViewModelを取得する。
+        /// </summary>
+        /// <returns>ログイン後メニューViewModel</returns>
+        public LoggedInMenuViewModel GetLoggedInMenuViewModel()
+        {
+            var loginUser = AuthManager.GetLoginUser();
+            return LoggedInMenuViewModel.CreateByLoginUser(loginUser);
+        }
     }
 }

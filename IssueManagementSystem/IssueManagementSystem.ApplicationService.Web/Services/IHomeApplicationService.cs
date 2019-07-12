@@ -19,6 +19,10 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
         /// <returns>ログイン成否</returns>
         bool Login(LoginViewModel loginViewModel);
 
-
+        /// <summary>
+        /// ログイン後メニューViewModelを取得する。
+        /// </summary>
+        /// <returns>ログイン後メニューViewModel</returns>
+        LoggedInMenuViewModel GetLoggedInMenuViewModel();
     }
 }

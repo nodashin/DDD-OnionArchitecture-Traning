@@ -76,5 +76,14 @@ namespace IssueManagementSystem.DomainService.Auth
 
             return true;
         }
+
+        /// <summary>
+        /// ログインユーザーを取得する。
+        /// </summary>
+        /// <returns>ログインユーザー</returns>
+        public LoginUser GetLoginUser()
+        {
+            return LoginUserRepository.GetLoginUser();
+        }
     }
 }
