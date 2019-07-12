@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Auth\LoginUser.cs" />
     <Compile Include="Auth\User.cs" />
+    <Compile Include="Issue\Issue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
