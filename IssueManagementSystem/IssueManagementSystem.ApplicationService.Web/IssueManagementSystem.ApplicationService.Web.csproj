@@ -67,12 +67,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\HomeApplicationService.cs" />
     <Compile Include="Services\IHomeApplicationService.cs" />
+    <Compile Include="ViewModels\Home\LoggedInMenuViewModel.cs" />
     <Compile Include="ViewModels\Home\LoginViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\IssueManagementSystem.DomainModel\IssueManagementSystem.DomainModel.csproj">
+      <Project>{7C4AEBE8-8078-45C9-B334-C0A525EFD9D9}</Project>
+      <Name>IssueManagementSystem.DomainModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IssueManagementSystem.DomainService\IssueManagementSystem.DomainService.csproj">
       <Project>{B9CA68B6-1187-407C-B85E-D5D48111384C}</Project>
       <Name>IssueManagementSystem.DomainService</Name>
