@@ -67,7 +67,7 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
         /// <returns>パスワード変更成否</returns>
         public bool ChangePassword(PasswordChangeViewModel viewModel)
         {
-            return AuthManager.ChangePassword(viewModel.UserId, viewModel.NowPassword, viewModel.NewPassword);
+            return AuthManager.ChangePassword(viewModel.UserId, viewModel.NowPassword, viewModel.NewPassword) == PasswordChangeResult.Success;
         }
         #endregion
     }

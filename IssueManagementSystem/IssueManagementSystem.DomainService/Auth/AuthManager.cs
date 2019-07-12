@@ -111,19 +111,19 @@ namespace IssueManagementSystem.DomainService.Auth
         /// <param name="userId">パスワードを変更するユーザーのユーザーID</param>
         /// <param name="nowPassword">現在のパスワード</param>
         /// <param name="newPassword">新しいパスワード</param>
-        /// <returns>パスワード変更成否</returns>
-        public bool ChangePassword(string userId, string nowPassword, string newPassword)
+        /// <returns>パスワード変更結果</returns>
+        public PasswordChangeResult ChangePassword(string userId, string nowPassword, string newPassword)
         {
             var user = UserRepository.FindById(userId);
             if (user == null)
                 throw new ArgumentException("指定したユーザーIDのユーザーが存在しません。");
 
             if (!PasswordHasher.MatchPassword(nowPassword, user.HashPassword))
-                return false;
+                return PasswordChangeResult.PasswordDifference;
 
             user.HashPassword = PasswordHasher.HashPassword(newPassword);
             UserRepository.Modify(user);
-            return true;
+            return PasswordChangeResult.Success;
         }
         #endregion
     }

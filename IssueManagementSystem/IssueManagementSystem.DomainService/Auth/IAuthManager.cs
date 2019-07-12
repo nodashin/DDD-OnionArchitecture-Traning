@@ -37,7 +37,7 @@ namespace IssueManagementSystem.DomainService.Auth
         /// <param name="userId">パスワードを変更するユーザーのユーザーID</param>
         /// <param name="nowPassword">現在のパスワード</param>
         /// <param name="newPassword">新しいパスワード</param>
-        /// <returns>パスワード変更成否</returns>
-        bool ChangePassword(string userId, string nowPassword, string newPassword);
+        /// <returns>パスワード変更結果</returns>
+        PasswordChangeResult ChangePassword(string userId, string nowPassword, string newPassword);
     }
 }
