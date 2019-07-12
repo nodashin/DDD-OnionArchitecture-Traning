@@ -77,6 +77,18 @@ namespace IssueManagementSystem.Web.Controllers
         }
         #endregion
 
+        #region ログアウト
+        /// <summary>
+        /// ログアウトする。
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Logout()
+        {
+            HomeApplicationService.Logout();
+            return RedirectToAction("Login", "Home");
+        }
+        #endregion
+
         #region あとで消す
         public ActionResult Index()
         {

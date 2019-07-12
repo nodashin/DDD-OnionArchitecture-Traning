@@ -13,13 +13,19 @@ namespace IssueManagementSystem.DomainService.Auth
     public interface ILoginUserRepository
     {
         /// <summary>
-        /// ログインユーザー
+        /// ログインユーザーを保存する。
         /// </summary>
-        void SetLoginUser(LoginUser loginUser);
+        /// <param name="loginUser">ログインユーザー</param>
+        void SaveLoginUser(LoginUser loginUser);
 
         /// <summary>
-        /// ログインユーザー
+        /// ログインユーザーを取得する。
         /// </summary>
         LoginUser GetLoginUser();
+
+        /// <summary>
+        /// ログインユーザーをクリアする。
+        /// </summary>
+        void ClearLoginUser();
     }
 }

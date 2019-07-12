@@ -54,6 +54,7 @@ namespace IssueManagementSystem.DomainService.Auth
             Authentication = authentication;
         }
 
+        #region ログイン
         /// <summary>
         /// ログインする。
         /// </summary>
@@ -69,10 +70,12 @@ namespace IssueManagementSystem.DomainService.Auth
             if (!PasswordHasher.MatchPassword(password, user.HashPassword))
                 return false;
 
+            //認証する。
             Authentication.Authenticate(userId);
 
+            //ログインユーザーを保存する。
             var loginUser = LoginUser.CreateByUser(user);
-            LoginUserRepository.SetLoginUser(loginUser);
+            LoginUserRepository.SaveLoginUser(loginUser);
 
             return true;
         }
@@ -85,5 +88,20 @@ namespace IssueManagementSystem.DomainService.Auth
         {
             return LoginUserRepository.GetLoginUser();
         }
+        #endregion
+
+        #region ログアウト
+        /// <summary>
+        /// ログイアウトする。
+        /// </summary>
+        public void Logout()
+        {
+            //認証を解除する。
+            Authentication.CancelAuthorization();
+
+            //ログインユーザーをクリアする。
+            LoginUserRepository.ClearLoginUser();
+        }
+        #endregion
     }
 }

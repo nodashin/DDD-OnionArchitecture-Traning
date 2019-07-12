@@ -24,5 +24,10 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
         /// </summary>
         /// <returns>ログイン後メニューViewModel</returns>
         LoggedInMenuViewModel GetLoggedInMenuViewModel();
+
+        /// <summary>
+        /// ログアウトする。
+        /// </summary>
+        void Logout();
     }
 }

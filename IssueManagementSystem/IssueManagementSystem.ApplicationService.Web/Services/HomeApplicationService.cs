@@ -27,6 +27,7 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
             AuthManager = authManager;
         }
 
+        #region ログイン
         /// <summary>
         /// ログインする。
         /// </summary>
@@ -46,5 +47,16 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
             var loginUser = AuthManager.GetLoginUser();
             return LoggedInMenuViewModel.CreateByLoginUser(loginUser);
         }
+        #endregion
+
+        #region ログアウト
+        /// <summary>
+        /// ログアウトする。
+        /// </summary>
+        public void Logout()
+        {
+            AuthManager.Logout();
+        }
+        #endregion
     }
 }

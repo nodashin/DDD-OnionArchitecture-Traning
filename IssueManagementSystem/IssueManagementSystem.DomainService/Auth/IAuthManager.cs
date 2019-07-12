@@ -25,5 +25,10 @@ namespace IssueManagementSystem.DomainService.Auth
         /// </summary>
         /// <returns>ログインユーザー</returns>
         LoginUser GetLoginUser();
+
+        /// <summary>
+        /// ログアウトする。
+        /// </summary>
+        void Logout();
     }
 }
