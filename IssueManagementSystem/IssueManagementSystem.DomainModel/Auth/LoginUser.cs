@@ -13,11 +13,6 @@ namespace IssueManagementSystem.DomainModel.Auth
     {
         #region プロパティ
         /// <summary>
-        /// ログインしているか。
-        /// </summary>
-        public bool IsLoggedIn { get => User != null; }
-
-        /// <summary>
         /// ログインユーザーID
         /// </summary>
         public string UserId { get => User?.UserId; }
@@ -25,7 +20,7 @@ namespace IssueManagementSystem.DomainModel.Auth
         /// <summary>
         /// ログインユーザー名
         /// </summary>
-        public string UserName { get => GetLoginUserName(); }
+        public string UserName { get => User?.GetUserName(); }
 
         /// <summary>
         /// ユーザー
@@ -41,18 +36,6 @@ namespace IssueManagementSystem.DomainModel.Auth
         private LoginUser(User user)
         {
             User = user;
-        }
-
-        /// <summary>
-        /// ログインユーザー名を取得する。
-        /// </summary>
-        /// <returns>ログインユーザー名</returns>
-        private string GetLoginUserName()
-        {
-            if (User == null)
-                return null;
-
-            return User.LastName + " " + User.FirstName;
         }
 
         /// <summary>
