@@ -12,6 +12,7 @@ namespace IssueManagementSystem.DomainModel.Auth
     /// </summary>
     public class User
     {
+        #region プロパティ
         /// <summary>
         /// ユーザーID
         /// </summary>
@@ -34,5 +35,15 @@ namespace IssueManagementSystem.DomainModel.Auth
         /// </summary>
         [Required]
         public string FirstName { get; set; }
+        #endregion
+
+        #region メソッド
+        /// <summary>
+        /// ユーザー名を取得する。
+        /// </summary>
+        /// <returns>ユーザー名</returns>
+        public string GetUserName()
+            => LastName + " " + FirstName;
+        #endregion
     }
 }
