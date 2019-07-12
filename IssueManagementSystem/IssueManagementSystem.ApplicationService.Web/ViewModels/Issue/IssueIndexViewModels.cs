@@ -81,11 +81,6 @@ namespace IssueManagementSystem.ApplicationService.Web.ViewModels.Issue
         /// </summary>
         [DisplayName("タイトル")]
         public string Title { get; set; }
-
-        /// <summary>
-        /// 課題
-        /// </summary>
-        private DomainModel.Issue.Issue Issue { get; }
         #endregion
 
         #region メソッド
@@ -95,7 +90,8 @@ namespace IssueManagementSystem.ApplicationService.Web.ViewModels.Issue
         /// <param name="issue">課題</param>
         private IssueIndexIssueViewModel(DomainModel.Issue.Issue issue)
         {
-            Issue = issue;
+            IssueId = issue.IssueId;
+            Title = issue.Title;
         }
 
         /// <summary>

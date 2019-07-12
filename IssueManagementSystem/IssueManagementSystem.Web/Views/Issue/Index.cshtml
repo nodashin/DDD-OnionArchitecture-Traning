@@ -24,12 +24,12 @@
         </tr>
     </thead>
     <tbody>
-        <tr>
-            @foreach (var issue in Model.Issues)
-            {
-                <td>@Html.ActionLink(issue.IssueId.ToString(), "Edit", new { IssueId = issue.IssueId})</td>
+        @foreach (var issue in Model.Issues)
+        {
+            <tr>
+                <td>@Html.ActionLink(issue.IssueId.ToString(), "Edit", new { IssueId = issue.IssueId })</td>
                 <td>@Html.DisplayFor(m => issue.Title)</td>
-            }
-        </tr>
+            </tr>
+        }
     </tbody>
 </table>

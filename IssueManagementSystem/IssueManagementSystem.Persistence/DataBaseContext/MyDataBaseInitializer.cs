@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using IssueManagementSystem.DomainModel.Auth;
+using IssueManagementSystem.DomainModel.Issue;
 using IssueManagementSystem.DomainService.Auth;
 
 namespace IssueManagementSystem.Persistence.DataBaseContext
@@ -20,6 +21,7 @@ namespace IssueManagementSystem.Persistence.DataBaseContext
         /// <param name="context">DBコンテキスト</param>
         protected override void Seed(MyDataBase context)
         {
+            #region ユーザー
             //ユーザー
             var passwordHasher = new InitialDataPasswordHasher();
             var users = new List<User>()
@@ -54,6 +56,21 @@ namespace IssueManagementSystem.Persistence.DataBaseContext
                 },
             };
             context.Users.AddRange(users);
+            #endregion
+
+            #region 課題
+            var issues = new List<Issue>();
+            for (int i = 1; i <= 10; i++)
+            {
+                var issue = new Issue()
+                {
+                    Title = "タイトル" + i.ToString(),
+                    Content = "内容" + i.ToString()
+                };
+                issues.Add(issue);
+            }
+            context.Issues.AddRange(issues);
+            #endregion
 
             context.SaveChanges();
         }
