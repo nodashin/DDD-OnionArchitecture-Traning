@@ -60,15 +60,15 @@ namespace IssueManagementSystem.DomainService.Auth
         /// </summary>
         /// <param name="userId">ユーザーID</param>
         /// <param name="password">パスワード</param>
-        /// <returns>ログイン成否</returns>
-        public bool Login(string userId, string password)
+        /// <returns>ログイン結果</returns>
+        public LoginResult Login(string userId, string password)
         {
             var user = UserRepository.FindById(userId);
             if (user == null)
-                return false;
+                return LoginResult.UserIdDifference;
 
             if (!PasswordHasher.MatchPassword(password, user.HashPassword))
-                return false;
+                return LoginResult.PasswordDifference;
 
             //認証する。
             Authentication.Authenticate(userId);
@@ -77,7 +77,7 @@ namespace IssueManagementSystem.DomainService.Auth
             var loginUser = LoginUser.CreateByUser(user);
             LoginUserRepository.SaveLoginUser(loginUser);
 
-            return true;
+            return LoginResult.Success;
         }
 
         /// <summary>

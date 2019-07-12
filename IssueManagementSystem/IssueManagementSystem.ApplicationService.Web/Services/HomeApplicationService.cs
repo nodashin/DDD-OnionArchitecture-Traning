@@ -35,7 +35,7 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
         /// <returns>ログイン成否</returns>
         public bool Login(LoginViewModel viewModel)
         {
-            return AuthManager.Login(viewModel.UserId, viewModel.Password);
+            return AuthManager.Login(viewModel.UserId, viewModel.Password) == LoginResult.Success;
         }
 
         /// <summary>

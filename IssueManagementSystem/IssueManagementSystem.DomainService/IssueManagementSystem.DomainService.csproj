@@ -48,6 +48,7 @@
     <Compile Include="Auth\IAuthManager.cs" />
     <Compile Include="Auth\IPasswordHasher.cs" />
     <Compile Include="Auth\IUserRepository.cs" />
+    <Compile Include="Auth\LoginResult.cs" />
     <Compile Include="Commons\IRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

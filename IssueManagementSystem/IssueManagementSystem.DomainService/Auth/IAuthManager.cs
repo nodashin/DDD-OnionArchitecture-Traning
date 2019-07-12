@@ -17,8 +17,8 @@ namespace IssueManagementSystem.DomainService.Auth
         /// </summary>
         /// <param name="userId">ユーザーID</param>
         /// <param name="password">パスワード</param>
-        /// <returns>ログイン成否</returns>
-        bool Login(string userId, string password);
+        /// <returns>ログイン結果</returns>
+        LoginResult Login (string userId, string password);
 
         /// <summary>
         /// ログインユーザーを取得する。
