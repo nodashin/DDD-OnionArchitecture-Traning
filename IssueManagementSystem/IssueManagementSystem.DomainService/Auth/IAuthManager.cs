@@ -30,5 +30,14 @@ namespace IssueManagementSystem.DomainService.Auth
         /// ログアウトする。
         /// </summary>
         void Logout();
+
+        /// <summary>
+        /// パスワードを変更する。
+        /// </summary>
+        /// <param name="userId">パスワードを変更するユーザーのユーザーID</param>
+        /// <param name="nowPassword">現在のパスワード</param>
+        /// <param name="newPassword">新しいパスワード</param>
+        /// <returns>パスワード変更成否</returns>
+        bool ChangePassword(string userId, string nowPassword, string newPassword);
     }
 }

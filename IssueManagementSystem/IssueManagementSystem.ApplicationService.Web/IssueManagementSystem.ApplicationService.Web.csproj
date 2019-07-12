@@ -69,6 +69,7 @@
     <Compile Include="Services\IHomeApplicationService.cs" />
     <Compile Include="ViewModels\Home\LoggedInMenuViewModel.cs" />
     <Compile Include="ViewModels\Home\LoginViewModel.cs" />
+    <Compile Include="ViewModels\Home\PasswordChangeViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

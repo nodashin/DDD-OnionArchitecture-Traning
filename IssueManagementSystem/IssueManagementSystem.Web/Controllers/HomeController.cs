@@ -77,6 +77,40 @@ namespace IssueManagementSystem.Web.Controllers
         }
         #endregion
 
+        #region パスワード変更
+        /// <summary>
+        /// パスワード変更Viewを表示する。
+        /// </summary>
+        /// <param name="userId">ユーザーID</param>
+        /// <returns>パスワード変更View</returns>
+        public ActionResult PasswordChange(string userId)
+        {
+            var viewModel = PasswordChangeViewModel.CreateByUserId(userId);
+            return View(viewModel);
+        }
+
+        /// <summary>
+        /// パスワードを変更する。
+        /// </summary>
+        /// <param name="viewModel">パスワード変更ViewModel</param>
+        /// <returns>課題一覧View</returns>
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult PasswordChange(PasswordChangeViewModel viewModel)
+        {
+            if (!ModelState.IsValid)
+                return View(viewModel);
+
+            if(!HomeApplicationService.ChangePassword(viewModel))
+            {
+                ModelState.AddModelError("", "現在のパスワードが誤っています。");
+                return View(viewModel);
+            }
+
+            return RedirectToAction("Index", "Home");
+        }
+        #endregion
+
         #region ログアウト
         /// <summary>
         /// ログアウトする。

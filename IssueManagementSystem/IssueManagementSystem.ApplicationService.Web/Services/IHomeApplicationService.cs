@@ -29,5 +29,12 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
         /// ログアウトする。
         /// </summary>
         void Logout();
+
+        /// <summary>
+        /// パスワードを変更する。
+        /// </summary>
+        /// <param name="viewModel">パスワード変更ViewModel</param>
+        /// <returns>パスワード変更成否</returns>
+        bool ChangePassword(PasswordChangeViewModel viewModel);
     }
 }

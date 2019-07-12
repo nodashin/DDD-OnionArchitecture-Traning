@@ -58,5 +58,17 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
             AuthManager.Logout();
         }
         #endregion
+
+        #region パスワード変更
+        /// <summary>
+        /// パスワードを変更する。
+        /// </summary>
+        /// <param name="viewModel">パスワード変更ViewModel</param>
+        /// <returns>パスワード変更成否</returns>
+        public bool ChangePassword(PasswordChangeViewModel viewModel)
+        {
+            return AuthManager.ChangePassword(viewModel.UserId, viewModel.NowPassword, viewModel.NewPassword);
+        }
+        #endregion
     }
 }

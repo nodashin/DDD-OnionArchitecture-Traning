@@ -14,10 +14,16 @@ namespace IssueManagementSystem.DomainService.Commons
     public interface IRepository<TDomainModel, TId>
     {
         /// <summary>
-        /// IDからドメインモデルを取得する。
+        /// IDからDmainModelを取得する。
         /// </summary>
         /// <param name="id">ID</param>
-        /// <returns>ドメインモデル</returns>
+        /// <returns>DmainModel</returns>
         TDomainModel FindById(TId id);
+
+        /// <summary>
+        /// DmainModelを修正する。
+        /// </summary>
+        /// <param name="model">DmainModel</param>
+        void Modify(TDomainModel model);
     }
 }

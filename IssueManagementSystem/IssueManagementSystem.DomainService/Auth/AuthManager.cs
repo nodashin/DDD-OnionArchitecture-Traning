@@ -103,5 +103,28 @@ namespace IssueManagementSystem.DomainService.Auth
             LoginUserRepository.ClearLoginUser();
         }
         #endregion
+
+        #region パスワード変更
+        /// <summary>
+        /// パスワードを変更する。
+        /// </summary>
+        /// <param name="userId">パスワードを変更するユーザーのユーザーID</param>
+        /// <param name="nowPassword">現在のパスワード</param>
+        /// <param name="newPassword">新しいパスワード</param>
+        /// <returns>パスワード変更成否</returns>
+        public bool ChangePassword(string userId, string nowPassword, string newPassword)
+        {
+            var user = UserRepository.FindById(userId);
+            if (user == null)
+                throw new ArgumentException("指定したユーザーIDのユーザーが存在しません。");
+
+            if (!PasswordHasher.MatchPassword(nowPassword, user.HashPassword))
+                return false;
+
+            user.HashPassword = PasswordHasher.HashPassword(newPassword);
+            UserRepository.Modify(user);
+            return true;
+        }
+        #endregion
     }
 }

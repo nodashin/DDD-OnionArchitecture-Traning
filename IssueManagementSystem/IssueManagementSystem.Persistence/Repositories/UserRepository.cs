@@ -28,5 +28,15 @@ namespace IssueManagementSystem.Persistence.Repositories
         {
             return Db.Users.SingleOrDefault(u => u.UserId == userId);
         }
+
+        /// <summary>
+        /// ユーザーを修正する。
+        /// </summary>
+        /// <param name="user">修正するユーザー</param>
+        public void Modify(User user)
+        {
+            Db.Entry(user).State = System.Data.Entity.EntityState.Modified;
+            Db.SaveChanges();
+        }
     }
 }

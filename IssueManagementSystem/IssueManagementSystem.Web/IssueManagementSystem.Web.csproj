@@ -211,6 +211,7 @@
     <Content Include="Scripts\popper-utils.js.map" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Shared\_LoggedInMenu.cshtml" />
+    <Content Include="Views\Home\PasswordChange.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
