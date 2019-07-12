@@ -18,5 +18,7 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
         /// <param name="loginViewModel">ログインViewModel</param>
         /// <returns>ログイン成否</returns>
         bool Login(LoginViewModel loginViewModel);
+
+
     }
 }
