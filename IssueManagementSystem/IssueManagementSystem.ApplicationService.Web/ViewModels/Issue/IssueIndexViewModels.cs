@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using IssueManagementSystem.ApplicationService.Web.ViewModels.Commons;
-using X.PagedList;
 
 namespace IssueManagementSystem.ApplicationService.Web.ViewModels.Issue
 {
@@ -27,7 +26,7 @@ namespace IssueManagementSystem.ApplicationService.Web.ViewModels.Issue
         /// <remarks>
         /// データが0件でもnullにはならず、Countが0の状態となる。
         /// </remarks>
-        public IPagedList<IssueIndexIssueViewModel> Issues { get; set; }
+        public List<IssueIndexIssueViewModel> Issues { get; set; }
         #endregion
 
         #region メソッド
@@ -36,7 +35,7 @@ namespace IssueManagementSystem.ApplicationService.Web.ViewModels.Issue
         /// </summary>
         /// <param name="searchConditionViewModel">検索条件ViewModel</param>
         /// <param name="issueViewModels">課題ViewMode群</param>
-        private IssueIndexViewModel(IssueIndexSearchConditionViewModel searchConditionViewModel, IPagedList<IssueIndexIssueViewModel> issueViewModels)
+        private IssueIndexViewModel(IssueIndexSearchConditionViewModel searchConditionViewModel, List<IssueIndexIssueViewModel> issueViewModels)
         {
             SearchCondition = searchConditionViewModel;
             Issues = issueViewModels;
@@ -49,7 +48,7 @@ namespace IssueManagementSystem.ApplicationService.Web.ViewModels.Issue
         /// <param name="issueViewModels">課題ViewModel群</param>
         /// <returns></returns>
         public static IssueIndexViewModel CreateByChildViewModels(IssueIndexSearchConditionViewModel searchConditionViewModel, 
-                                                                  IPagedList<IssueIndexIssueViewModel> issueViewModels)
+                                                                  List<IssueIndexIssueViewModel> issueViewModels)
             => new IssueIndexViewModel(searchConditionViewModel, issueViewModels);
         #endregion
     }
@@ -90,19 +89,19 @@ namespace IssueManagementSystem.ApplicationService.Web.ViewModels.Issue
         /// コンストラクタ
         /// </summary>
         /// <param name="issue">課題</param>
-        //private IssueIndexIssueViewModel(DomainModel.Issue.Issue issue)
-        //{
-        //    IssueId = issue.IssueId;
-        //    Title = issue.Title;
-        //}
+        private IssueIndexIssueViewModel(DomainModel.Issue.Issue issue)
+        {
+            IssueId = issue.IssueId;
+            Title = issue.Title;
+        }
 
         /// <summary>
         /// 課題一覧 - 課題ViewModelを生成する。
         /// </summary>
         /// <param name="issue">課題</param>
         /// <returns></returns>
-        //public static IssueIndexIssueViewModel CreateByIssue(DomainModel.Issue.Issue issue)
-        //    => new IssueIndexIssueViewModel(issue);
+        public static IssueIndexIssueViewModel CreateByIssue(DomainModel.Issue.Issue issue)
+            => new IssueIndexIssueViewModel(issue);
         #endregion
     }
     #endregion

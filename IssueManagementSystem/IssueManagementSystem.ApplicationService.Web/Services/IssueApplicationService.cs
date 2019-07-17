@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using IssueManagementSystem.ApplicationService.Web.ViewModels.Issue;
 using IssueManagementSystem.DomainService.Issue;
-using X.PagedList;
 
 namespace IssueManagementSystem.ApplicationService.Web.Services
 {
@@ -33,17 +32,16 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
         /// </summary>
         /// <param name="searchConditionViewModel">検索条件ViewModel</param>
         /// <returns>検索条件に一致する課題群</returns>
-        public IPagedList<IssueIndexIssueViewModel> Search(IssueIndexSearchConditionViewModel searchConditionViewModel)
+        public List<IssueIndexIssueViewModel> Search(IssueIndexSearchConditionViewModel searchConditionViewModel)
         {
             var issues = IssueRepository.FindAll().OrderBy(i => i.IssueId);
 
             //TODO:ここで検索条件でフィルタリングをかける。
 
-            return issues.Select(i => new IssueIndexIssueViewModel()
-            {
-                IssueId = i.IssueId,
-                Title = i.Title
-            }).ToPagedList(searchConditionViewModel.PageNumner, searchConditionViewModel.PageSize);
+            var issueIndexIssueViewModels = new List<IssueIndexIssueViewModel>();
+            foreach (var i in issues)
+                issueIndexIssueViewModels.Add(IssueIndexIssueViewModel.CreateByIssue(i));
+            return issueIndexIssueViewModels;
         }
     }
 }
