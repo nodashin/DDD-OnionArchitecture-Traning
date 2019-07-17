@@ -77,5 +77,12 @@ namespace IssueManagementSystem.Web.Controllers
             return RedirectToAction("Index");
         }
         #endregion
+
+        #region 課題編集
+        public ActionResult Edit(string issueId)
+        {
+
+        }
+        #endregion
     }
 }

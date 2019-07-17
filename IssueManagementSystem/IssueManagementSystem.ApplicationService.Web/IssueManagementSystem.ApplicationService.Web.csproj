@@ -75,6 +75,7 @@
     <Compile Include="ViewModels\Home\LoginViewModel.cs" />
     <Compile Include="ViewModels\Home\PasswordChangeViewModel.cs" />
     <Compile Include="ViewModels\Issue\IssueCreateViewModel.cs" />
+    <Compile Include="ViewModels\Issue\IssueEditViewModel.cs" />
     <Compile Include="ViewModels\Issue\IssueIndexViewModels.cs" />
     <Compile Include="ViewModels\Issue\IssueViewModel.cs" />
   </ItemGroup>
