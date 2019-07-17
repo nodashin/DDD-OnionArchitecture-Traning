@@ -59,6 +59,21 @@ namespace IssueManagementSystem.Web.Controllers
         {
             return View(new IssueCreateViewModel());
         }
+
+        /// <summary>
+        /// 課題を作成する。
+        /// </summary>
+        /// <param name="viewModel">課題作成ViewModel</param>
+        /// <returns>課題一覧ViewModel</returns>
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(IssueCreateViewModel viewModel)
+        {
+            if (!ModelState.IsValid)
+                return View(viewModel);
+
+
+        }
         #endregion
     }
 }

@@ -28,10 +28,10 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
         }
 
         /// <summary>
-        /// 検索する。
+        /// 課題を検索する。
         /// </summary>
-        /// <param name="searchConditionViewModel">検索条件ViewModel</param>
-        /// <returns>検索条件に一致する課題群</returns>
+        /// <param name="searchConditionViewModel">課題一覧 - 検索条件ViewModel</param>
+        /// <returns>検索条件に一致する課題一覧 - 課題ViewModel</returns>
         public List<IssueIndexIssueViewModel> Search(IssueIndexSearchConditionViewModel searchConditionViewModel)
         {
             var issues = IssueRepository.FindAll().OrderBy(i => i.IssueId);
@@ -42,6 +42,15 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
             foreach (var i in issues)
                 issueIndexIssueViewModels.Add(IssueIndexIssueViewModel.CreateByIssue(i));
             return issueIndexIssueViewModels;
+        }
+
+        /// <summary>
+        /// 課題を作成する。
+        /// </summary>
+        /// <param name="viewModel">課題作成ViewModel</param>
+        public void Create(IssueCreateViewModel viewModel)
+        {
+            throw new NotImplementedException();
         }
     }
 }

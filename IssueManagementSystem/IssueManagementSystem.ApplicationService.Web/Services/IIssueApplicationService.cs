@@ -13,10 +13,16 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
     public interface IIssueApplicationService
     {
         /// <summary>
-        /// 検索する。
+        /// 課題を検索する。
         /// </summary>
-        /// <param name="searchConditionViewModel">検索条件ViewModel</param>
-        /// <returns>検索条件に一致する課題群</returns>
+        /// <param name="searchConditionViewModel">課題一覧 - 検索条件ViewModel</param>
+        /// <returns>検索条件に一致する課題一覧 - 課題ViewModel</returns>
         List<IssueIndexIssueViewModel> Search(IssueIndexSearchConditionViewModel searchConditionViewModel);
+
+        /// <summary>
+        /// 課題を作成する。
+        /// </summary>
+        /// <param name="viewModel">課題作成ViewModel</param>
+        void Create(IssueCreateViewModel viewModel);
     }
 }
