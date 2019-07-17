@@ -37,5 +37,11 @@ namespace IssueManagementSystem.DomainService.Commons
         /// </summary>
         /// <param name="model">DmainModel</param>
         void Modify(TDomainModel model);
+
+        /// <summary>
+        /// DomainModelを削除する。
+        /// </summary>
+        /// <param name="id">DomainModelのID</param>
+        void Remove(TId id);
     }
 }

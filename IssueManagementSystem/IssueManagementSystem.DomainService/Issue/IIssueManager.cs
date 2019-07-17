@@ -22,5 +22,11 @@ namespace IssueManagementSystem.DomainService.Issue
         /// </summary>
         /// <param name="issue">修正する課題</param>
         void Edit(DomainModel.Issue.Issue issue);
+
+        /// <summary>
+        /// 課題を削除する。
+        /// </summary>
+        /// <param name="issueId">削除する課題ID</param>
+        void Delete(int issueId);
     }
 }

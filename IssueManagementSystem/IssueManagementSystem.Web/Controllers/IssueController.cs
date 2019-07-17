@@ -101,6 +101,19 @@ namespace IssueManagementSystem.Web.Controllers
             IssueApplicationService.Edit(viewModel);
             return RedirectToAction("Index");
         }
+
+        /// <summary>
+        /// 課題を削除する。
+        /// </summary>
+        /// <param name="issueId">課題ID</param>
+        /// <returns>課題一覧View</returns>
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(int issueId)
+        {
+            IssueApplicationService.Delete(issueId);
+            return RedirectToAction("Index");
+        }
         #endregion
     }
 }

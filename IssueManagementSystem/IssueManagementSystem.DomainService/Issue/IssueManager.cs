@@ -43,5 +43,14 @@ namespace IssueManagementSystem.DomainService.Issue
         {
             IssueRepository.Modify(issue);
         }
+
+        /// <summary>
+        /// 課題を削除する。
+        /// </summary>
+        /// <param name="issueId">削除する課題ID</param>
+        public void Delete(int issueId)
+        {
+            IssueRepository.Remove(issueId);
+        }
     }
 }

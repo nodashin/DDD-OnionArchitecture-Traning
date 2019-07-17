@@ -56,5 +56,10 @@ namespace IssueManagementSystem.Persistence.Repositories
             Db.Entry(user).State = System.Data.Entity.EntityState.Modified;
             Db.SaveChanges();
         }
+
+        public void Remove(string id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

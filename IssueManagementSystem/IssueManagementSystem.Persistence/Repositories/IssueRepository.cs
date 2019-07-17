@@ -62,5 +62,16 @@ namespace IssueManagementSystem.Persistence.Repositories
             Db.Entry(originIssue).State = EntityState.Modified;
             Db.SaveChanges();
         }
+
+        /// <summary>
+        /// 課題を削除する。
+        /// </summary>
+        /// <param name="issueId">課題ID</param>
+        public void Remove(int issueId)
+        {
+            var issue = FindById(issueId);
+            Db.Issues.Remove(issue);
+            Db.SaveChanges();
+        }
     }
 }
