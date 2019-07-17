@@ -14,6 +14,11 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
     public class IssueApplicationService : IIssueApplicationService
     {
         /// <summary>
+        /// 課題マネージャー
+        /// </summary>
+        private IIssueManager IssueManager { get; }
+
+        /// <summary>
         /// 課題Repository
         /// </summary>
         private IIssueRepository IssueRepository { get; }
@@ -21,9 +26,11 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
         /// <summary>
         /// コンストラクタ
         /// </summary>
+        /// <param name="issueManager">課題マネージャー</param>
         /// <param name="issueRepository">課題Repository</param>
-        public IssueApplicationService(IIssueRepository issueRepository)
+        public IssueApplicationService(IIssueManager issueManager, IIssueRepository issueRepository)
         {
+            IssueManager = issueManager;
             IssueRepository = issueRepository;
         }
 
