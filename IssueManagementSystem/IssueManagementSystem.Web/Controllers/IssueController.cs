@@ -78,7 +78,7 @@ namespace IssueManagementSystem.Web.Controllers
         }
         #endregion
 
-        #region 課題編集
+        #region 課題編集・削除
         /// <summary>
         /// 課題編集Viewを表示する。
         /// </summary>
@@ -87,6 +87,19 @@ namespace IssueManagementSystem.Web.Controllers
         public ActionResult Edit(int issueId)
         {
             return View(IssueApplicationService.GetIssueEditViewModel(issueId));
+        }
+
+        /// <summary>
+        /// 課題を編集する。
+        /// </summary>
+        /// <param name="viewModel">課題編集ViewModel</param>
+        /// <returns>課題一覧View</returns>
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(IssueEditViewModel viewModel)
+        {
+            IssueApplicationService.Edit(viewModel);
+            return RedirectToAction("Index");
         }
         #endregion
     }

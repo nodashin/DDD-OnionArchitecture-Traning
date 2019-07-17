@@ -34,5 +34,14 @@ namespace IssueManagementSystem.DomainService.Issue
         {
             IssueRepository.Create(issue);
         }
+
+        /// <summary>
+        /// 課題を修正する。
+        /// </summary>
+        /// <param name="issue">修正する課題</param>
+        public void Edit(DomainModel.Issue.Issue issue)
+        {
+            IssueRepository.Modify(issue);
+        }
     }
 }

@@ -58,7 +58,7 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
         /// <param name="viewModel">課題作成ViewModel</param>
         public void Create(IssueCreateViewModel viewModel)
         {
-            var issue = Issue.CreateByDetails(viewModel.Title, viewModel.Content);
+            var issue = Issue.CreateByDetailInfo(viewModel.Title, viewModel.Content);
             IssueManager.Create(issue);
         }
 
@@ -71,6 +71,16 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
         {
             var issue = IssueRepository.FindById(issueId);
             return IssueEditViewModel.CreateByIssue(issue);
+        }
+
+        /// <summary>
+        /// 課題を編集する。
+        /// </summary>
+        /// <param name="viewModel">課題編集ViewModel</param>
+        public void Edit(IssueEditViewModel viewModel)
+        {
+            var issue = Issue.CreateByIssueInfo(viewModel.IssueId, viewModel.Title, viewModel.Content);
+            IssueManager.Edit(issue);
         }
     }
 }

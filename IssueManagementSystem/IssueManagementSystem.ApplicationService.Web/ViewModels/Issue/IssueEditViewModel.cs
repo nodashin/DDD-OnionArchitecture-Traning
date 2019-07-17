@@ -16,7 +16,15 @@ namespace IssueManagementSystem.ApplicationService.Web.ViewModels.Issue
         /// 課題ID
         /// </summary>
         [DisplayName("課題ID")]
-        public int IssueId { get; }
+        public int IssueId { get; set; }
+
+        #region メソッド
+
+        #region コンストラクタ
+        /// <summary>
+        /// コンストラクタ(View用)
+        /// </summary>
+        public IssueEditViewModel() { }
 
         /// <summary>
         /// コンストラクタ
@@ -30,6 +38,7 @@ namespace IssueManagementSystem.ApplicationService.Web.ViewModels.Issue
             Title = title;
             Content = content;
         }
+        #endregion
 
         /// <summary>
         /// 課題から課題編集ViewModelを作成する。
@@ -38,5 +47,6 @@ namespace IssueManagementSystem.ApplicationService.Web.ViewModels.Issue
         /// <returns>課題編集ViewModel</returns>
         public static IssueEditViewModel CreateByIssue(DomainModel.Issue.Issue issue)
             => new IssueEditViewModel(issue.IssueId, issue.Title, issue.Content);
+        #endregion
     }
 }

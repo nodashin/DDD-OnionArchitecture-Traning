@@ -62,7 +62,7 @@ namespace IssueManagementSystem.Persistence.DataBaseContext
             var issues = new List<Issue>();
             for (int i = 1; i <= 10; i++)
             {
-                var issue = Issue.CreateByDetails("タイトル" + i.ToString(), "内容" + i.ToString());
+                var issue = Issue.CreateByDetailInfo("タイトル" + i.ToString(), "内容" + i.ToString());
                 issues.Add(issue);
             }
             context.Issues.AddRange(issues);

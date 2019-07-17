@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -48,9 +49,18 @@ namespace IssueManagementSystem.Persistence.Repositories
             Db.SaveChanges();
         }
 
-        public void Modify(Issue model)
+        /// <summary>
+        /// 課題を修正する。
+        /// </summary>
+        /// <param name="issue">課題</param>
+        public void Modify(Issue issue)
         {
-            throw new NotImplementedException();
+            var originIssue = FindById(issue.IssueId);
+            originIssue.Title = issue.Title;
+            originIssue.Content = issue.Content;
+
+            Db.Entry(originIssue).State = EntityState.Modified;
+            Db.SaveChanges();
         }
     }
 }

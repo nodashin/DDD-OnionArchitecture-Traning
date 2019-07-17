@@ -16,5 +16,11 @@ namespace IssueManagementSystem.DomainService.Issue
         /// </summary>
         /// <param name="issue">作成する課題</param>
         void Create(DomainModel.Issue.Issue issue);
+
+        /// <summary>
+        /// 課題を修正する。
+        /// </summary>
+        /// <param name="issue">修正する課題</param>
+        void Edit(DomainModel.Issue.Issue issue);
     }
 }
