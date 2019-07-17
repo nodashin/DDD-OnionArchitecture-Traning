@@ -39,6 +39,15 @@ namespace IssueManagementSystem.Persistence.Repositories
         }
 
         /// <summary>
+        /// ユーザーを作成する。
+        /// </summary>
+        /// <param name="user">ユーザー</param>
+        public void Create(User user)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
         /// ユーザーを修正する。
         /// </summary>
         /// <param name="user">修正するユーザー</param>

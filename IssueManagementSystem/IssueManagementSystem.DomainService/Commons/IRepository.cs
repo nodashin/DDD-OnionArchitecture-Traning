@@ -27,6 +27,12 @@ namespace IssueManagementSystem.DomainService.Commons
         TDomainModel FindById(TId id);
 
         /// <summary>
+        /// DomainModelを作成する。
+        /// </summary>
+        /// <param name="model">DomainModel</param>
+        void Create(TDomainModel model);
+
+        /// <summary>
         /// DmainModelを修正する。
         /// </summary>
         /// <param name="model">DmainModel</param>

@@ -60,13 +60,9 @@ namespace IssueManagementSystem.Persistence.DataBaseContext
 
             #region 課題
             var issues = new List<Issue>();
-            for (int i = 1; i <= 20; i++)
+            for (int i = 1; i <= 10; i++)
             {
-                var issue = new Issue()
-                {
-                    Title = "タイトル" + i.ToString(),
-                    Content = "内容" + i.ToString()
-                };
+                var issue = Issue.CreateByDetails("タイトル" + i.ToString(), "内容" + i.ToString());
                 issues.Add(issue);
             }
             context.Issues.AddRange(issues);

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using IssueManagementSystem.ApplicationService.Web.ViewModels.Issue;
+using IssueManagementSystem.DomainModel.Issue;
 using IssueManagementSystem.DomainService.Issue;
 
 namespace IssueManagementSystem.ApplicationService.Web.Services
@@ -57,7 +58,8 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
         /// <param name="viewModel">課題作成ViewModel</param>
         public void Create(IssueCreateViewModel viewModel)
         {
-            throw new NotImplementedException();
+            var issue = Issue.CreateByDetails(viewModel.Title, viewModel.Content);
+            IssueManager.Create(issue);
         }
     }
 }

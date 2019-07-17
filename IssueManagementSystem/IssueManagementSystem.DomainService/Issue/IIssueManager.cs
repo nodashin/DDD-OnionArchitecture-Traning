@@ -11,5 +11,10 @@ namespace IssueManagementSystem.DomainService.Issue
     /// </summary>
     public interface IIssueManager
     {
+        /// <summary>
+        /// 課題を作成する。
+        /// </summary>
+        /// <param name="issue">作成する課題</param>
+        void Create(DomainModel.Issue.Issue issue);
     }
 }

@@ -72,7 +72,9 @@ namespace IssueManagementSystem.Web.Controllers
             if (!ModelState.IsValid)
                 return View(viewModel);
 
+            IssueApplicationService.Create(viewModel);
 
+            return RedirectToAction("Index");
         }
         #endregion
     }

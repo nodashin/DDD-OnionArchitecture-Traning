@@ -33,6 +33,16 @@ namespace IssueManagementSystem.Persistence.Repositories
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// 課題を作成する。
+        /// </summary>
+        /// <param name="issue">課題</param>
+        public void Create(Issue issue)
+        {
+            Db.Issues.Add(issue);
+            Db.SaveChanges();
+        }
+
         public void Modify(Issue model)
         {
             throw new NotImplementedException();
