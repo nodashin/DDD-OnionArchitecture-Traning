@@ -61,5 +61,16 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
             var issue = Issue.CreateByDetails(viewModel.Title, viewModel.Content);
             IssueManager.Create(issue);
         }
+
+        /// <summary>
+        /// 課題編集ViewModelを取得する。
+        /// </summary>
+        /// <param name="issueId">課題ID</param>
+        /// <returns>課題編集ViewModel</returns>
+        public IssueEditViewModel GetIssueEditViewModel(int issueId)
+        {
+            var issue = IssueRepository.FindById(issueId);
+            return IssueEditViewModel.CreateByIssue(issue);
+        }
     }
 }

@@ -24,5 +24,12 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
         /// </summary>
         /// <param name="viewModel">課題作成ViewModel</param>
         void Create(IssueCreateViewModel viewModel);
+
+        /// <summary>
+        /// 課題編集ViewModelを取得する。
+        /// </summary>
+        /// <param name="issueId">課題ID</param>
+        /// <returns>課題編集ViewModel</returns>
+        IssueEditViewModel GetIssueEditViewModel(int issueId);
     }
 }

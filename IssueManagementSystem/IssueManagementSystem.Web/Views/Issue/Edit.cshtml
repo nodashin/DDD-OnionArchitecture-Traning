@@ -1,0 +1,23 @@
+﻿@model IssueManagementSystem.ApplicationService.Web.ViewModels.Issue.IssueEditViewModel
+
+@{
+    ViewBag.Title = "課題編集";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummaryAlert()
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.IssueId)
+        @Html.EditorFor(m => m.IssueId, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+    </div>
+
+    @Html.Partial("_IssuePartial", Model)
+
+    <button class="btn btn-primary">作成</button>
+    <button class="btn btn-danger" formaction="/Issue/Delete/@Model.IssueId">削除</button>
+}

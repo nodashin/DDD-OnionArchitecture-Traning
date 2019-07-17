@@ -28,9 +28,14 @@ namespace IssueManagementSystem.Persistence.Repositories
             return Db.Issues;
         }
 
-        public Issue FindById(int id)
+        /// <summary>
+        /// 課題IDから課題を取得する。
+        /// </summary>
+        /// <param name="issueId">課題ID</param>
+        /// <returns>課題</returns>
+        public Issue FindById(int issueId)
         {
-            throw new NotImplementedException();
+            return Db.Issues.SingleOrDefault(i => i.IssueId == issueId);
         }
 
         /// <summary>

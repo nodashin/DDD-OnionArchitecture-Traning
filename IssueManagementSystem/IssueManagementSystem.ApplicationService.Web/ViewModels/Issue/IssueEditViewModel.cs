@@ -16,17 +16,17 @@ namespace IssueManagementSystem.ApplicationService.Web.ViewModels.Issue
         /// 課題ID
         /// </summary>
         [DisplayName("課題ID")]
-        public int IsseuId { get; }
+        public int IssueId { get; }
 
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        /// <param name="isseuId">課題ID</param>
+        /// <param name="issueId">課題ID</param>
         /// <param name="title">タイトル</param>
         /// <param name="content">内容</param>
-        private IssueEditViewModel(int isseuId, string title, string content)
+        private IssueEditViewModel(int issueId, string title, string content)
         {
-            IsseuId = isseuId;
+            IssueId = issueId;
             Title = title;
             Content = content;
         }

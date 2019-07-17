@@ -79,9 +79,14 @@ namespace IssueManagementSystem.Web.Controllers
         #endregion
 
         #region 課題編集
-        public ActionResult Edit(string issueId)
+        /// <summary>
+        /// 課題編集Viewを表示する。
+        /// </summary>
+        /// <param name="issueId">課題ID</param>
+        /// <returns>課題編集View</returns>
+        public ActionResult Edit(int issueId)
         {
-            return View();
+            return View(IssueApplicationService.GetIssueEditViewModel(issueId));
         }
         #endregion
     }
