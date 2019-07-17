@@ -18,7 +18,7 @@
 |フォルダ|プロジェクト|役割|
 |-|-|-|
 |PresentationLayer|IssueManagementSystem.Web|ASP.NET MVCアプリケーション。|
-|InfrastructureLayer|IssueManagementSystem.Persistence|永続化に関するプロジェクト。<br>DBやログインしたユーザーの情報等。|
+|InfrastructureLayer|IssueManagementSystem.Persistence|永続化。<br>DBやログインしたユーザーの情報等。|
 |InfrastructureLayer|IssueManagementSystem.Platform|システムの基幹となるテクノロジー群。<br>横断的関心事の集まり。|
 |ApplicationLayer|IssueManagementSystem.ApplicationService.Web|ASP.NET MVCアプリケーションに対応するApplicationService。|
 |DomainLayer|IssueManagementSystem.DomainService|ビジネスロジック。|
