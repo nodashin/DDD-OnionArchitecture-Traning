@@ -81,7 +81,7 @@ namespace IssueManagementSystem.Web.Controllers
         #region 課題編集
         public ActionResult Edit(string issueId)
         {
-
+            return View();
         }
         #endregion
     }
