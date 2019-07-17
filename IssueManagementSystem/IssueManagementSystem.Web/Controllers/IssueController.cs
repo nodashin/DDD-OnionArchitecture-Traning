@@ -49,5 +49,16 @@ namespace IssueManagementSystem.Web.Controllers
             return View("Index", viewModel);
         }
         #endregion
+
+        #region 課題作成
+        /// <summary>
+        /// 課題作成Viewを表示する。
+        /// </summary>
+        /// <returns>課題作成View</returns>
+        public ActionResult Create()
+        {
+            return View(new IssueCreateViewModel());
+        }
+        #endregion
     }
 }

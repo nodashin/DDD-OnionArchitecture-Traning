@@ -1,0 +1,17 @@
+﻿@model IssueManagementSystem.ApplicationService.Web.ViewModels.Issue.IssueCreateViewModel
+
+@{
+    ViewBag.Title = "課題作成";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummaryAlert()
+
+    @Html.Partial("_IssuePartial", Model)
+
+    <button class="btn btn-primary">作成</button>
+}

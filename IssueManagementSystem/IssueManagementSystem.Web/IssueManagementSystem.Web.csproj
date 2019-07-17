@@ -214,6 +214,8 @@
     <Content Include="Views\Shared\_LoggedInMenu.cshtml" />
     <Content Include="Views\Home\PasswordChange.cshtml" />
     <Content Include="Views\Issue\Index.cshtml" />
+    <Content Include="Views\Issue\Create.cshtml" />
+    <Content Include="Views\Issue\_IssuePartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

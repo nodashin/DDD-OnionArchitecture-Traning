@@ -1,0 +1,13 @@
+﻿@model IssueManagementSystem.ApplicationService.Web.ViewModels.Issue.IssueViewModel
+
+<div class="form-group">
+    @Html.LabelFor(m => m.Title)
+    @Html.EditorFor(m => m.Title, new { htmlAttributes = new { @class = "form-control" } })
+    @Html.ValidationMessageFor(m => m.Title, "", new { @class = "text-danger"})
+</div>
+
+<div class="form-group">
+    @Html.LabelFor(m => m.Content)
+    @Html.TextAreaFor(m => m.Content, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Content, "", new { @class = "text-danger" })
+</div>
