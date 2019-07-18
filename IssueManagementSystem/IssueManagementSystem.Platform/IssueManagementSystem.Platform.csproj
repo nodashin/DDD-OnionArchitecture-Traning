@@ -72,7 +72,7 @@
     <Compile Include="IoC\MyDependencyResolver.cs" />
     <Compile Include="IoC\ResolverConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Security\MyAuthentication.cs" />
+    <Compile Include="Security\Authentications\MyFormAuthentication.cs" />
     <Compile Include="Security\PasswordHasher.cs" />
   </ItemGroup>
   <ItemGroup>

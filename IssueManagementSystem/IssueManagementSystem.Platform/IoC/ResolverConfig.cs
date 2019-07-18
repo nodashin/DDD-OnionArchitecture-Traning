@@ -9,6 +9,7 @@ using IssueManagementSystem.DomainService.Auth;
 using IssueManagementSystem.DomainService.Issue;
 using IssueManagementSystem.Persistence.Repositories;
 using IssueManagementSystem.Platform.Security;
+using IssueManagementSystem.Platform.Security.Authentications;
 using Ninject;
 
 namespace IssueManagementSystem.Platform.IoC
@@ -40,7 +41,7 @@ namespace IssueManagementSystem.Platform.IoC
 
             //Platform
             kernel.Bind<IPasswordHasher>().To<PasswordHasher>();
-            kernel.Bind<IMyAuthentication>().To<MyAuthentication>();
+            kernel.Bind<IMyAuthentication>().To<MyFormAuthentication>();
 
             DependencyResolver.SetResolver(new MyDependencyResolver(kernel));
         }

@@ -21,6 +21,8 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
         #endregion
 
         #region メソッド
+
+        #region コンストラクタ
         /// <summary>
         /// コンストラクタ
         /// </summary>
@@ -29,6 +31,7 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
         {
             AuthManager = authManager;
         }
+        #endregion
 
         #region ログイン
         /// <summary>

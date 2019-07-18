@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 using System.Web.Security;
 using IssueManagementSystem.DomainService.Auth;
 
-namespace IssueManagementSystem.Platform.Security
+namespace IssueManagementSystem.Platform.Security.Authentications
 {
-
     /// <summary>
-    /// 認証
+    /// Form認証
     /// </summary>
-    public class MyAuthentication : IMyAuthentication
+    public class MyFormAuthentication : IMyAuthentication
     {
+        #region メソッド
         /// <summary>
         /// 認証する。
         /// </summary>
@@ -30,5 +30,6 @@ namespace IssueManagementSystem.Platform.Security
         {
             FormsAuthentication.SignOut();
         }
+        #endregion
     }
 }

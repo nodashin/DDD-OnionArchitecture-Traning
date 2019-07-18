@@ -12,9 +12,11 @@ namespace IssueManagementSystem.Persistence.Stores
     /// </summary>
     internal static class LoginUserStore
     {
+        #region プロパティ
         /// <summary>
         /// ログインユーザー
         /// </summary>
         public static LoginUser LoginUser { get; set; }
+        #endregion
     }
 }

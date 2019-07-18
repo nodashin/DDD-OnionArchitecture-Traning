@@ -12,6 +12,7 @@ namespace IssueManagementSystem.Platform.Security
     /// </summary>
     public class PasswordHasher : IPasswordHasher
     {
+        #region メソッド
         /// <summary>
         /// パスワードをハッシュ化する。
         /// </summary>
@@ -32,5 +33,6 @@ namespace IssueManagementSystem.Platform.Security
         {
             return BCrypt.Net.BCrypt.Verify(password, hashPassword);
         }
+        #endregion
     }
 }
