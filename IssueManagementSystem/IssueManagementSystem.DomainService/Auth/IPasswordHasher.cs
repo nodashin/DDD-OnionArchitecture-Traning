@@ -11,6 +11,7 @@ namespace IssueManagementSystem.DomainService.Auth
     /// </summary>
     public interface IPasswordHasher
     {
+        #region メソッド
         /// <summary>
         /// パスワードをハッシュ化する。
         /// </summary>
@@ -25,5 +26,6 @@ namespace IssueManagementSystem.DomainService.Auth
         /// <param name="hashPassword">ハッシュパスワード</param>
         /// <returns>一致有無</returns>
         bool MatchPassword(string password, string hashPassword);
+        #endregion
     }
 }

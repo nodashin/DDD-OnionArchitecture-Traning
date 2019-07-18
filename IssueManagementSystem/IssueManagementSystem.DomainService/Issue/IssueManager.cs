@@ -12,11 +12,16 @@ namespace IssueManagementSystem.DomainService.Issue
     /// </summary>
     public class IssueManager : IIssueManager
     {
+        #region プロパティ
         /// <summary>
         /// 課題Repository
         /// </summary>
         private IIssueRepository IssueRepository { get; }
+        #endregion
 
+        #region メソッド
+
+        #region コンストラクタ
         /// <summary>
         /// コンストラクタ
         /// </summary>
@@ -25,6 +30,7 @@ namespace IssueManagementSystem.DomainService.Issue
         {
             IssueRepository = issueRepository;
         }
+        #endregion
 
         /// <summary>
         /// 課題を作成する。
@@ -52,5 +58,6 @@ namespace IssueManagementSystem.DomainService.Issue
         {
             IssueRepository.Remove(issueId);
         }
+        #endregion
     }
 }

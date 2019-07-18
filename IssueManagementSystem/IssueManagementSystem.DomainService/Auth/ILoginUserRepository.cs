@@ -12,6 +12,7 @@ namespace IssueManagementSystem.DomainService.Auth
     /// </summary>
     public interface ILoginUserRepository
     {
+        #region メソッド
         /// <summary>
         /// ログインユーザーを保存する。
         /// </summary>
@@ -27,5 +28,6 @@ namespace IssueManagementSystem.DomainService.Auth
         /// ログインユーザーをクリアする。
         /// </summary>
         void ClearLoginUser();
+        #endregion
     }
 }

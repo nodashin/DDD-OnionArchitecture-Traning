@@ -13,11 +13,14 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
     /// </summary>
     public class HomeApplicationService : IHomeApplicationService
     {
+        #region プロパティ
         /// <summary>
         /// 認証マネージャー
         /// </summary>
         private IAuthManager AuthManager { get; }
+        #endregion
 
+        #region メソッド
         /// <summary>
         /// コンストラクタ
         /// </summary>
@@ -69,6 +72,8 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
         {
             return AuthManager.ChangePassword(viewModel.UserId, viewModel.NowPassword, viewModel.NewPassword) == PasswordChangeResult.Success;
         }
+        #endregion
+
         #endregion
     }
 }

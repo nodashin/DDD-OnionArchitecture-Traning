@@ -13,6 +13,7 @@ namespace IssueManagementSystem.DomainService.Commons
     /// <typeparam name="TId">DomainModelのIDの型</typeparam>
     public interface IRepository<TDomainModel, TId>
     {
+        #region メソッド
         /// <summary>
         /// 全DomainModelを取得する。
         /// </summary>
@@ -43,5 +44,6 @@ namespace IssueManagementSystem.DomainService.Commons
         /// </summary>
         /// <param name="id">DomainModelのID</param>
         void Remove(TId id);
+        #endregion
     }
 }

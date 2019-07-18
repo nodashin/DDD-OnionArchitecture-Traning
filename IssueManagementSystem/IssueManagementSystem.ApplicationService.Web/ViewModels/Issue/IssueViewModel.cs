@@ -13,6 +13,7 @@ namespace IssueManagementSystem.ApplicationService.Web.ViewModels.Issue
     /// </summary>
     public class IssueViewModel
     {
+        #region プロパティ
         /// <summary>
         /// タイトル
         /// </summary>
@@ -26,5 +27,6 @@ namespace IssueManagementSystem.ApplicationService.Web.ViewModels.Issue
         [DisplayName("内容")]
         [MyRequired]
         public string Content { get; set; }
+        #endregion
     }
 }

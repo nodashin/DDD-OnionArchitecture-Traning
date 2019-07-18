@@ -14,6 +14,7 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
     /// </summary>
     public class IssueApplicationService : IIssueApplicationService
     {
+        #region プロパティ
         /// <summary>
         /// 課題マネージャー
         /// </summary>
@@ -23,7 +24,11 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
         /// 課題Repository
         /// </summary>
         private IIssueRepository IssueRepository { get; }
+        #endregion
 
+        #region メソッド
+
+        #region コンストラクタ
         /// <summary>
         /// コンストラクタ
         /// </summary>
@@ -34,6 +39,7 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
             IssueManager = issueManager;
             IssueRepository = issueRepository;
         }
+        #endregion
 
         /// <summary>
         /// 課題を検索する。
@@ -81,6 +87,7 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
             IssueManager.Delete(issueId);
         }
 
+        #region ViewModel取得
         /// <summary>
         /// 課題編集ViewModelを取得する。
         /// </summary>
@@ -91,5 +98,8 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
             var issue = IssueRepository.FindById(issueId);
             return IssueEditViewModel.CreateByIssue(issue);
         }
+        #endregion
+
+        #endregion
     }
 }

@@ -11,6 +11,7 @@ namespace IssueManagementSystem.DomainService.Auth
     /// </summary>
     public interface IMyAuthentication
     {
+        #region メソッド
         /// <summary>
         /// 認証する。
         /// </summary>
@@ -21,5 +22,6 @@ namespace IssueManagementSystem.DomainService.Auth
         /// 認証を解除する。
         /// </summary>
         void CancelAuthorization();
+        #endregion
     }
 }

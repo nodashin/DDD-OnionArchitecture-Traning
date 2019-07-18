@@ -11,6 +11,7 @@ namespace IssueManagementSystem.DomainService.Issue
     /// </summary>
     public interface IIssueManager
     {
+        #region メソッド
         /// <summary>
         /// 課題を作成する。
         /// </summary>
@@ -28,5 +29,6 @@ namespace IssueManagementSystem.DomainService.Issue
         /// </summary>
         /// <param name="issueId">削除する課題ID</param>
         void Delete(int issueId);
+        #endregion
     }
 }

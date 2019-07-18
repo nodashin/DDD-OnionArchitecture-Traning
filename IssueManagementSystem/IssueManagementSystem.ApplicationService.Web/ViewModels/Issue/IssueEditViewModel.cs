@@ -12,11 +12,13 @@ namespace IssueManagementSystem.ApplicationService.Web.ViewModels.Issue
     /// </summary>
     public class IssueEditViewModel : IssueViewModel
     {
+        #region プロパティ
         /// <summary>
         /// 課題ID
         /// </summary>
         [DisplayName("課題ID")]
         public int IssueId { get; set; }
+        #endregion
 
         #region メソッド
 

@@ -12,6 +12,7 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
     /// </summary>
     public interface IHomeApplicationService
     {
+        #region メソッド
         /// <summary>
         /// ログインする。
         /// </summary>
@@ -36,5 +37,6 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
         /// <param name="viewModel">パスワード変更ViewModel</param>
         /// <returns>パスワード変更成否</returns>
         bool ChangePassword(PasswordChangeViewModel viewModel);
+        #endregion
     }
 }

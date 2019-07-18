@@ -15,6 +15,7 @@ namespace IssueManagementSystem.ApplicationService.Web.ViewModels.Commons
     /// </remarks>
     public class SearchConditionViewModel
     {
+        #region プロパティ
         /// <summary>
         /// ページ番号
         /// </summary>
@@ -25,5 +26,6 @@ namespace IssueManagementSystem.ApplicationService.Web.ViewModels.Commons
         /// ページサイズ
         /// </summary>
         public int PageSize { get; set; } = 10;
+        #endregion
     }
 }

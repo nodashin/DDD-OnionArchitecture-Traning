@@ -12,6 +12,7 @@ namespace IssueManagementSystem.DomainService.Auth
     /// </summary>
     public interface IAuthManager
     {
+        #region メソッド
         /// <summary>
         /// ログインする。
         /// </summary>
@@ -39,5 +40,6 @@ namespace IssueManagementSystem.DomainService.Auth
         /// <param name="newPassword">新しいパスワード</param>
         /// <returns>パスワード変更結果</returns>
         PasswordChangeResult ChangePassword(string userId, string nowPassword, string newPassword);
+        #endregion
     }
 }

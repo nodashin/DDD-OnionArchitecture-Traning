@@ -38,8 +38,6 @@ namespace IssueManagementSystem.ApplicationService.Web.ViewModels.Home
         #endregion
 
         #region メソッド
-
-        #region ファクトリー
         /// <summary>
         /// ログイン後のリダイレクトURLからログインViewModelを生成する。
         /// </summary>
@@ -47,8 +45,6 @@ namespace IssueManagementSystem.ApplicationService.Web.ViewModels.Home
         /// <returns>ログインViewModel</returns>
         public static LoginViewModel CreateByReturnUrl(string returnUrl)
             => new LoginViewModel() { ReturnUrl = returnUrl };
-        #endregion
-
         #endregion
     }
 }

@@ -12,6 +12,7 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
     /// </summary>
     public interface IIssueApplicationService
     {
+        #region メソッド
         /// <summary>
         /// 課題を検索する。
         /// </summary>
@@ -43,5 +44,6 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
         /// <param name="issueId">課題ID</param>
         /// <returns>課題編集ViewModel</returns>
         IssueEditViewModel GetIssueEditViewModel(int issueId);
+        #endregion
     }
 }
