@@ -32,6 +32,7 @@ namespace IssueManagementSystem.Platform.IoC
 
             //DomainService
             kernel.Bind<IAuthManager>().To<AuthManager>();
+            kernel.Bind<IUserManager>().To<UserManager>();
             kernel.Bind<IIssueManager>().To<IssueManager>();
 
             //Repository

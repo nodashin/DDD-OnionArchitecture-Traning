@@ -11,7 +11,7 @@ namespace IssueManagementSystem.DomainService.Auth
     /// <summary>
     /// ユーザーRepositoryインタフェース
     /// </summary>
-    public interface IUserRepository : IRepository<DomainModel.Auth.User, string>
+    public interface IUserRepository : IRepository<User, string>
     {
     }
 }

@@ -47,9 +47,11 @@
     <Compile Include="Auth\IMyAuthentication.cs" />
     <Compile Include="Auth\IAuthManager.cs" />
     <Compile Include="Auth\IPasswordHasher.cs" />
+    <Compile Include="Auth\IUserManager.cs" />
     <Compile Include="Auth\IUserRepository.cs" />
     <Compile Include="Auth\LoginResult.cs" />
     <Compile Include="Auth\PasswordChangeResult.cs" />
+    <Compile Include="Auth\UserManager.cs" />
     <Compile Include="Commons\IRepository.cs" />
     <Compile Include="Issue\IIssueManager.cs" />
     <Compile Include="Issue\IIssueRepository.cs" />

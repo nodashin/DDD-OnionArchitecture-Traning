@@ -13,7 +13,7 @@ namespace IssueManagementSystem.Persistence.DataBaseContext
     /// <summary>
     /// DBイニシャライザー
     /// </summary>
-    class MyDataBaseInitializer : DropCreateDatabaseAlways<MyDataBase>
+    internal class MyDataBaseInitializer : DropCreateDatabaseAlways<MyDataBase>
     {
         #region メソッド
         /// <summary>

@@ -12,7 +12,7 @@ namespace IssueManagementSystem.Persistence.DataBaseContext
     /// <summary>
     /// DB
     /// </summary>
-    public class MyDataBase : DbContext
+    internal class MyDataBase : DbContext
     {
         #region DomainModels
         /// <summary>
