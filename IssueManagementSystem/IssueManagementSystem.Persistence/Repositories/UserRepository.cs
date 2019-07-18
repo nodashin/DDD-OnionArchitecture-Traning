@@ -14,11 +14,14 @@ namespace IssueManagementSystem.Persistence.Repositories
     /// </summary>
     public class UserRepository : IUserRepository
     {
+        #region プロパティ
         /// <summary>
         /// データベース
         /// </summary>
         private readonly MyDataBase Db = new MyDataBase();
+        #endregion
 
+        #region メソッド
         /// <summary>
         /// 全ユーザーを取得する。
         /// </summary>
@@ -61,5 +64,6 @@ namespace IssueManagementSystem.Persistence.Repositories
         {
             throw new NotImplementedException();
         }
+        #endregion
     }
 }

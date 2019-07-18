@@ -15,6 +15,7 @@ namespace IssueManagementSystem.Persistence.DataBaseContext
     /// </summary>
     class MyDataBaseInitializer : DropCreateDatabaseAlways<MyDataBase>
     {
+        #region メソッド
         /// <summary>
         /// DBコンテキストを初期化する。
         /// </summary>
@@ -70,7 +71,9 @@ namespace IssueManagementSystem.Persistence.DataBaseContext
 
             context.SaveChanges();
         }
+        #endregion
 
+        #region 初期データ用パスワードハッシュ
         /// <summary>
         /// 初期データ用パスワードハッシュ
         /// </summary>
@@ -94,5 +97,6 @@ namespace IssueManagementSystem.Persistence.DataBaseContext
                 throw new NotImplementedException();
             }
         }
+        #endregion
     }
 }

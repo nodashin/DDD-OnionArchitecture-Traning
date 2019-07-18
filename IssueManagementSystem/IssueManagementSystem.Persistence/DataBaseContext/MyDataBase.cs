@@ -14,6 +14,7 @@ namespace IssueManagementSystem.Persistence.DataBaseContext
     /// </summary>
     internal class MyDataBase : DbContext
     {
+        #region DomainModels
         /// <summary>
         /// ユーザー
         /// </summary>
@@ -23,7 +24,9 @@ namespace IssueManagementSystem.Persistence.DataBaseContext
         /// 課題
         /// </summary>
         public DbSet<Issue> Issues { get; set; }
+        #endregion
 
+        #region メソッド
         /// <summary>
         /// コンストラクタ
         /// </summary>
@@ -34,5 +37,6 @@ namespace IssueManagementSystem.Persistence.DataBaseContext
         {
             Database.SetInitializer(new MyDataBaseInitializer());
         }
+        #endregion
     }
 }

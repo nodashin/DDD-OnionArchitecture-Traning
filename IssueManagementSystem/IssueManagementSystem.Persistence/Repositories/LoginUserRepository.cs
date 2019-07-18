@@ -14,7 +14,7 @@ namespace IssueManagementSystem.Persistence.Repositories
     /// </summary>
     public class LoginUserRepository : ILoginUserRepository
     {
-
+        #region メソッド
         /// <summary>
         /// ログインユーザーを保存する。
         /// </summary>
@@ -39,5 +39,6 @@ namespace IssueManagementSystem.Persistence.Repositories
         {
             LoginUserStore.LoginUser = null;
         }
+        #endregion
     }
 }

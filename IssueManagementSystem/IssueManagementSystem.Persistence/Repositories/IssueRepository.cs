@@ -15,11 +15,14 @@ namespace IssueManagementSystem.Persistence.Repositories
     /// </summary>
     public class IssueRepository : IIssueRepository
     {
+        #region プロパティ
         /// <summary>
         /// データベース
         /// </summary>
         private MyDataBase Db { get; } = new MyDataBase();
+        #endregion
 
+        #region メソッド
         /// <summary>
         /// 全課題を取得する。
         /// </summary>
@@ -73,5 +76,6 @@ namespace IssueManagementSystem.Persistence.Repositories
             Db.Issues.Remove(issue);
             Db.SaveChanges();
         }
+        #endregion
     }
 }

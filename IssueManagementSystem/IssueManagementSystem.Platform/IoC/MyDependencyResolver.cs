@@ -13,11 +13,16 @@ namespace IssueManagementSystem.Platform.IoC
     /// </summary>
     public class MyDependencyResolver : IDependencyResolver
     {
+        #region プロパティ
         /// <summary>
         /// カーネル
         /// </summary>
         private IKernel Kernel { get; }
+        #endregion
 
+        #region メソッド
+
+        #region コンストラクタ
         /// <summary>
         /// コンストラクタ
         /// </summary>
@@ -26,6 +31,7 @@ namespace IssueManagementSystem.Platform.IoC
         {
             Kernel = kernel;
         }
+        #endregion
 
         /// <summary>
         /// 単一のサービスを解決する。
@@ -46,5 +52,6 @@ namespace IssueManagementSystem.Platform.IoC
         {
             return Kernel.GetAll(serviceType);
         }
+        #endregion
     }
 }
