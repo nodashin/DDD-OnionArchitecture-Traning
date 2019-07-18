@@ -11,6 +11,8 @@ namespace IssueManagementSystem.DomainModel.Auth.Tests
     [TestClass()]
     public class UserTests
     {
+        #region メソッド
+
         #region GetUserName
         [TestMethod()]
         public void GetUserNameTest()
@@ -18,6 +20,8 @@ namespace IssueManagementSystem.DomainModel.Auth.Tests
             var user = new User() { FirstName = "Lennon", LastName = "McCartney" };
             Assert.AreEqual("McCartney Lennon", user.GetUserName());
         }
+        #endregion
+
         #endregion
     }
 }
