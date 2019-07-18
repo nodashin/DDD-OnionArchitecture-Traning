@@ -36,6 +36,9 @@ namespace IssueManagementSystem.DomainService.Auth
         public IMyAuthentication Authentication { get; }
         #endregion
 
+        #region メソッド
+
+        #region コンストラクタ
         /// <summary>
         /// コンストラクタ
         /// </summary>
@@ -43,9 +46,9 @@ namespace IssueManagementSystem.DomainService.Auth
         /// <param name="loginUserRepository"></param>
         /// <param name="authentication"></param>
         /// <param name="passwordHasher"></param>
-        public AuthManager(IUserRepository userRepository, 
-                           ILoginUserRepository loginUserRepository, 
-                           IPasswordHasher passwordHasher, 
+        public AuthManager(IUserRepository userRepository,
+                           ILoginUserRepository loginUserRepository,
+                           IPasswordHasher passwordHasher,
                            IMyAuthentication authentication)
         {
             UserRepository = userRepository;
@@ -53,6 +56,7 @@ namespace IssueManagementSystem.DomainService.Auth
             PasswordHasher = passwordHasher;
             Authentication = authentication;
         }
+        #endregion
 
         #region ログイン
         /// <summary>
@@ -125,6 +129,8 @@ namespace IssueManagementSystem.DomainService.Auth
             UserRepository.Modify(user);
             return PasswordChangeResult.Success;
         }
+        #endregion
+
         #endregion
     }
 }

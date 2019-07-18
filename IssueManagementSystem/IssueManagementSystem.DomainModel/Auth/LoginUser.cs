@@ -29,6 +29,8 @@ namespace IssueManagementSystem.DomainModel.Auth
         #endregion
 
         #region メソッド
+
+        #region コンストラクタ
         /// <summary>
         /// コンストラクタ
         /// </summary>
@@ -37,7 +39,9 @@ namespace IssueManagementSystem.DomainModel.Auth
         {
             User = user;
         }
+        #endregion
 
+        #region Factory
         /// <summary>
         /// ユーザーからログインユーザーを生成する。
         /// </summary>
@@ -45,6 +49,8 @@ namespace IssueManagementSystem.DomainModel.Auth
         /// <returns>ログインユーザー</returns>
         public static LoginUser CreateByUser(User user)
             => new LoginUser(user);
+        #endregion
+
         #endregion
     }
 }
