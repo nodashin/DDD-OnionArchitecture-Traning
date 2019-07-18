@@ -11,7 +11,7 @@ namespace IssueManagementSystem.DomainModel.Auth.Tests
     [TestClass()]
     public class UserTests
     {
-        #region メソッド
+        #region メソッドテスト
 
         #region GetUserName
         [TestMethod()]
