@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace IssueManagementSystem.DomainService.Auth
 {
     /// <summary>
-    /// パスワードハッシュインタフェース
+    /// パスワードハッシャーインタフェース
     /// </summary>
     public interface IPasswordHasher
     {

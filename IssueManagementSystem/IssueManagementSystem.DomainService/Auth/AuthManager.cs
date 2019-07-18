@@ -23,17 +23,17 @@ namespace IssueManagementSystem.DomainService.Auth
         /// <summary>
         /// ログインユーザーRepository
         /// </summary>
-        public ILoginUserRepository LoginUserRepository { get; }
-
-        /// <summary>
-        /// パスワードハッシュ
-        /// </summary>
-        private IPasswordHasher PasswordHasher { get; }
+        private ILoginUserRepository LoginUserRepository { get; }
 
         /// <summary>
         /// 認証
         /// </summary>
-        public IMyAuthentication Authentication { get; }
+        private IMyAuthentication Authentication { get; }
+
+        /// <summary>
+        /// パスワードハッシャー
+        /// </summary>
+        private IPasswordHasher PasswordHasher { get; }
         #endregion
 
         #region メソッド
@@ -43,18 +43,18 @@ namespace IssueManagementSystem.DomainService.Auth
         /// コンストラクタ
         /// </summary>
         /// <param name="userRepository">ユーザーRepository</param>
-        /// <param name="loginUserRepository"></param>
-        /// <param name="authentication"></param>
-        /// <param name="passwordHasher"></param>
+        /// <param name="loginUserRepository">ログインユーザーRepository</param>
+        /// <param name="authentication">認証</param>
+        /// <param name="passwordHasher">パスワードハッシャー</param>
         public AuthManager(IUserRepository userRepository,
                            ILoginUserRepository loginUserRepository,
-                           IPasswordHasher passwordHasher,
-                           IMyAuthentication authentication)
+                           IMyAuthentication authentication,
+                           IPasswordHasher passwordHasher)
         {
             UserRepository = userRepository;
             LoginUserRepository = loginUserRepository;
-            PasswordHasher = passwordHasher;
             Authentication = authentication;
+            PasswordHasher = passwordHasher;
         }
         #endregion
 
@@ -119,9 +119,6 @@ namespace IssueManagementSystem.DomainService.Auth
         public PasswordChangeResult ChangePassword(string userId, string nowPassword, string newPassword)
         {
             var user = UserRepository.FindById(userId);
-            if (user == null)
-                throw new ArgumentException("指定したユーザーIDのユーザーが存在しません。");
-
             if (!PasswordHasher.MatchPassword(nowPassword, user.HashPassword))
                 return PasswordChangeResult.PasswordDifference;
 

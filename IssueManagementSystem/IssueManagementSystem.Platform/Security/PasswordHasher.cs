@@ -8,7 +8,7 @@ using IssueManagementSystem.DomainService.Auth;
 namespace IssueManagementSystem.Platform.Security
 {
     /// <summary>
-    /// パスワードハッシュ
+    /// パスワードハッシャー
     /// </summary>
     public class PasswordHasher : IPasswordHasher
     {
