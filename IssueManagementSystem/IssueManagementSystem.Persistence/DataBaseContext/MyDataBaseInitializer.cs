@@ -25,30 +25,30 @@ namespace IssueManagementSystem.Persistence.DataBaseContext
             #region ユーザー
             //ユーザー
             var passwordHasher = new InitialDataPasswordHasher();
-            var users = new List<User>()
+            var users = new List<DomainModel.Auth.User>()
             {
-                new User()
+                new DomainModel.Auth.User()
                 {
                     UserId = "0227",
                     HashPassword = passwordHasher.HashPassword("0227"),
                     LastName = "野田",
                     FirstName = "凛"
                 },
-                new User()
+                new DomainModel.Auth.User()
                 {
                     UserId = "0501",
                     HashPassword = passwordHasher.HashPassword("0501"),
                     LastName = "野田",
                     FirstName = "柚子"
                 },
-                new User()
+                new DomainModel.Auth.User()
                 {
                     UserId = "0725",
                     HashPassword = passwordHasher.HashPassword("0725"),
                     LastName = "小坂",
                     FirstName = "輝良"
                 },
-                new User()
+                new DomainModel.Auth.User()
                 {
                     UserId = "0328",
                     HashPassword = passwordHasher.HashPassword("0328"),
@@ -60,10 +60,10 @@ namespace IssueManagementSystem.Persistence.DataBaseContext
             #endregion
 
             #region 課題
-            var issues = new List<Issue>();
+            var issues = new List<DomainModel.Issue.Issue>();
             for (int i = 1; i <= 10; i++)
             {
-                var issue = Issue.CreateByDetailInfo("タイトル" + i.ToString(), "内容" + i.ToString());
+                var issue = DomainModel.Issue.Issue.CreateByDetailInfo("タイトル" + i.ToString(), "内容" + i.ToString());
                 issues.Add(issue);
             }
             context.Issues.AddRange(issues);

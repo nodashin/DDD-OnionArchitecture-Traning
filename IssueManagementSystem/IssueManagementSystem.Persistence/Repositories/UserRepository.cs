@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -42,12 +43,13 @@ namespace IssueManagementSystem.Persistence.Repositories
         }
 
         /// <summary>
-        /// ユーザーを作成する。
+        /// ユーザーを追加する。
         /// </summary>
-        /// <param name="user">ユーザー</param>
-        public void Create(User user)
+        /// <param name="user">追加するユーザー</param>
+        public void Add(User user)
         {
-            throw new NotImplementedException();
+            Db.Users.Add(user);
+            Db.SaveChanges();
         }
 
         /// <summary>
@@ -56,13 +58,24 @@ namespace IssueManagementSystem.Persistence.Repositories
         /// <param name="user">修正するユーザー</param>
         public void Modify(User user)
         {
-            Db.Entry(user).State = System.Data.Entity.EntityState.Modified;
+            var origin = FindById(user.UserId);
+            origin.HashPassword = user.HashPassword;
+            origin.LastName = user.LastName;
+            origin.FirstName = user.FirstName;
+
+            Db.Entry(origin).State = EntityState.Modified;
             Db.SaveChanges();
         }
 
-        public void Remove(string id)
+        /// <summary>
+        /// ユーザーを削除する。
+        /// </summary>
+        /// <param name="userId">削除するユーザーID</param>
+        public void Remove(string userId)
         {
-            throw new NotImplementedException();
+            var user = FindById(userId);
+            Db.Users.Remove(user);
+            Db.SaveChanges();
         }
         #endregion
     }

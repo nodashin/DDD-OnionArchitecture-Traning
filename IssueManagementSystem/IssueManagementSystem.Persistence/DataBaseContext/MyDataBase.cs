@@ -12,18 +12,18 @@ namespace IssueManagementSystem.Persistence.DataBaseContext
     /// <summary>
     /// DB
     /// </summary>
-    internal class MyDataBase : DbContext
+    public class MyDataBase : DbContext
     {
         #region DomainModels
         /// <summary>
         /// ユーザー
         /// </summary>
-        public DbSet<User> Users { get; set; }
+        public DbSet<DomainModel.Auth.User> Users { get; set; }
 
         /// <summary>
         /// 課題
         /// </summary>
-        public DbSet<Issue> Issues { get; set; }
+        public DbSet<DomainModel.Issue.Issue> Issues { get; set; }
         #endregion
 
         #region メソッド

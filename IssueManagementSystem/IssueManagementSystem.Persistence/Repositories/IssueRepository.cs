@@ -43,10 +43,10 @@ namespace IssueManagementSystem.Persistence.Repositories
         }
 
         /// <summary>
-        /// 課題を作成する。
+        /// 課題を追加する。
         /// </summary>
-        /// <param name="issue">課題</param>
-        public void Create(Issue issue)
+        /// <param name="issue">追加する課題</param>
+        public void Add(Issue issue)
         {
             Db.Issues.Add(issue);
             Db.SaveChanges();
@@ -55,21 +55,21 @@ namespace IssueManagementSystem.Persistence.Repositories
         /// <summary>
         /// 課題を修正する。
         /// </summary>
-        /// <param name="issue">課題</param>
+        /// <param name="issue">修正する課題</param>
         public void Modify(Issue issue)
         {
-            var originIssue = FindById(issue.IssueId);
-            originIssue.Title = issue.Title;
-            originIssue.Content = issue.Content;
+            var origin = FindById(issue.IssueId);
+            origin.Title = issue.Title;
+            origin.Content = issue.Content;
 
-            Db.Entry(originIssue).State = EntityState.Modified;
+            Db.Entry(origin).State = EntityState.Modified;
             Db.SaveChanges();
         }
 
         /// <summary>
         /// 課題を削除する。
         /// </summary>
-        /// <param name="issueId">課題ID</param>
+        /// <param name="issueId">削除する課題ID</param>
         public void Remove(int issueId)
         {
             var issue = FindById(issueId);

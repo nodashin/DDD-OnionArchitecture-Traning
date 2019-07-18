@@ -38,7 +38,7 @@ namespace IssueManagementSystem.DomainService.Issue
         /// <param name="issue">作成する課題</param>
         public void Create(DomainModel.Issue.Issue issue)
         {
-            IssueRepository.Create(issue);
+            IssueRepository.Add(issue);
         }
 
         /// <summary>

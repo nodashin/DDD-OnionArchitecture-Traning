@@ -28,21 +28,21 @@ namespace IssueManagementSystem.DomainService.Commons
         TDomainModel FindById(TId id);
 
         /// <summary>
-        /// DomainModelを作成する。
+        /// DomainModelを追加する。
         /// </summary>
-        /// <param name="model">DomainModel</param>
-        void Create(TDomainModel model);
+        /// <param name="model">追加するDomainModel</param>
+        void Add(TDomainModel model);
 
         /// <summary>
         /// DmainModelを修正する。
         /// </summary>
-        /// <param name="model">DmainModel</param>
+        /// <param name="model">修正するDmainModel</param>
         void Modify(TDomainModel model);
 
         /// <summary>
         /// DomainModelを削除する。
         /// </summary>
-        /// <param name="id">DomainModelのID</param>
+        /// <param name="id">削除するDomainModelのID</param>
         void Remove(TId id);
         #endregion
     }

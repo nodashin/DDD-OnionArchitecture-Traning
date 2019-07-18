@@ -33,7 +33,7 @@ namespace IssueManagementSystem.DomainServiceTests.TestModules.TestInfrastructur
             };
         }
 
-        public void Create(User model)
+        public void Add(User model)
         {
             throw new NotImplementedException();
         }
