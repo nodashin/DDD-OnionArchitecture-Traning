@@ -13,7 +13,6 @@ namespace IssueManagementSystem.DomainServiceTests.TestModules.TestInfrastructur
     /// </summary>
     public class TestUserRepository : IUserRepository
     {
-
         /// <summary>
         /// IDに「Test」を指定した場合のみユーザーを返す。
         /// </summary>
@@ -33,14 +32,13 @@ namespace IssueManagementSystem.DomainServiceTests.TestModules.TestInfrastructur
             };
         }
 
+        /// <summary>
+        /// 何もしない
+        /// </summary>
+        /// <param name="model">未使用</param>
         public void Add(User model)
         {
-            throw new NotImplementedException();
-        }
 
-        public IQueryable<User> FindAll()
-        {
-            throw new NotImplementedException();
         }
 
         /// <summary>
@@ -49,10 +47,19 @@ namespace IssueManagementSystem.DomainServiceTests.TestModules.TestInfrastructur
         /// <param name="model">未使用</param>
         public void Modify(User model)
         {
-            
+
         }
 
+        /// <summary>
+        /// 何もしない
+        /// </summary>
+        /// <param name="model">未使用</param>
         public void Remove(string id)
+        {
+
+        }
+
+        public IQueryable<User> FindAll()
         {
             throw new NotImplementedException();
         }

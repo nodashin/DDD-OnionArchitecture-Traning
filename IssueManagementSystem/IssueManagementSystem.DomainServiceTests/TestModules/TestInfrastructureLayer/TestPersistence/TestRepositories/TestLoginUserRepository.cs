@@ -13,23 +13,32 @@ namespace IssueManagementSystem.DomainServiceTests.TestModules.TestInfrastructur
     /// </summary>
     public class TestLoginUserRepository : ILoginUserRepository
     {
-        public void ClearLoginUser()
-        {
-            throw new NotImplementedException();
-        }
+        /// <summary>
+        /// ログインユーザーをストアではなくRepository内で管理する。
+        /// </summary>
+        private static LoginUser LoginUser { get; set; }
 
-        public LoginUser GetLoginUser()
+        /// <summary>
+        /// ログインユーザーを設定する。
+        /// </summary>
+        /// <param name="loginUser">ログインユーザー</param>
+        public void SaveLoginUser(LoginUser loginUser)
         {
-            throw new NotImplementedException();
+            LoginUser = loginUser;
         }
 
         /// <summary>
-        /// 何もしない。
+        /// ログインユーザーを取得する。
         /// </summary>
-        /// <param name="loginUser">未使用</param>
-        public void SaveLoginUser(LoginUser loginUser)
+        /// <returns>ログインユーザー</returns>
+        public LoginUser GetLoginUser()
         {
-            
+            return LoginUser;
+        }
+
+        public void ClearLoginUser()
+        {
+            throw new NotImplementedException();
         }
     }
 }

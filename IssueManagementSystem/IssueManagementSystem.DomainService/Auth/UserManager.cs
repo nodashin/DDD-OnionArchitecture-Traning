@@ -24,7 +24,7 @@ namespace IssueManagementSystem.DomainService.Auth
         public ILoginUserRepository LoginUserRepository { get; }
         #endregion
 
-        #region プロパティ
+        #region メソッド
 
         #region コンストラクタ
         /// <summary>
@@ -54,6 +54,7 @@ namespace IssueManagementSystem.DomainService.Auth
         /// <param name="user">修正するユーザー(パスワードが入っていても現在のパスワードで上書きする)</param>
         public void EditWithoutPassword(User user)
         {
+            user.HashPassword = UserRepository.FindById(user.UserId).HashPassword;
             UserRepository.Modify(user);
         }
 
