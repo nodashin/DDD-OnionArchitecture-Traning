@@ -11,7 +11,7 @@ namespace IssueManagementSystem.DomainServiceTests.TestModules.TestInfrastructur
     /// <summary>
     /// テスト用ログインユーザーRepository
     /// </summary>
-    public class TestLoginUserRepository : ILoginUserRepository
+    internal class TestLoginUserRepository : ILoginUserRepository
     {
         /// <summary>
         /// ログインユーザーをストアではなくRepository内で管理する。

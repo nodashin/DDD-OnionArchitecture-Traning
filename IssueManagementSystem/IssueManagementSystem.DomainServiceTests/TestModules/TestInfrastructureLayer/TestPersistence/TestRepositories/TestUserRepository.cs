@@ -11,7 +11,7 @@ namespace IssueManagementSystem.DomainServiceTests.TestModules.TestInfrastructur
     /// <summary>
     /// テスト用ユーザーRepository
     /// </summary>
-    public class TestUserRepository : IUserRepository
+    internal class TestUserRepository : IUserRepository
     {
         /// <summary>
         /// IDに「Test」を指定した場合のみユーザーを返す。
