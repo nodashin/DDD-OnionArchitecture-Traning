@@ -54,7 +54,10 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
 
             var issueIndexIssueViewModels = new List<IssueIndexIssueViewModel>();
             foreach (var i in issues)
+            {
                 issueIndexIssueViewModels.Add(IssueIndexIssueViewModel.CreateByIssue(i));
+            }
+
             return issueIndexIssueViewModels;
         }
 

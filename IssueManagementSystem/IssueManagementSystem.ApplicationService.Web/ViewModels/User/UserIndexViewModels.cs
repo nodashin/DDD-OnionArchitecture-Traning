@@ -57,6 +57,32 @@ namespace IssueManagementSystem.ApplicationService.Web.ViewModels.User
         [DisplayName("ユーザー名")]
         public string UserName { get; set; }
         #endregion
+
+        #region メソッド
+
+        #region コンストラクタ
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        /// <param name="user">ユーザー</param>
+        private UserIndexUserViewModel(DomainModel.Auth.User user)
+        {
+            UserId = user.UserId;
+            UserName = user.GetUserName();
+        }
+        #endregion
+
+        #region Factory
+        /// <summary>
+        /// ユーザーからユーザー一覧 - ユーザーViewModelを生成する。
+        /// </summary>
+        /// <param name="user">ユーザー</param>
+        /// <returns>ユーザー一覧 - ユーザーViewModel</returns>
+        public static UserIndexUserViewModel CreateByUser(DomainModel.Auth.User user)
+            => new UserIndexUserViewModel(user);
+        #endregion
+
+        #endregion
     }
     #endregion
 }

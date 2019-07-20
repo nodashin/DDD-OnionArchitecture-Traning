@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using IssueManagementSystem.ApplicationService.Web.ViewModels.User;
 
 namespace IssueManagementSystem.ApplicationService.Web.Services
 {
     /// <summary>
-    /// ユーザーApplicationService
+    /// ユーザーApplicationServiceインタフェース
     /// </summary>
-    public class IUserApplicationService
+    public interface IUserApplicationService
     {
-
+        List<UserIndexUserViewModel> Search(UserIndexSerchConditionViewModel SerchConditionViewModel);
     }
 }
