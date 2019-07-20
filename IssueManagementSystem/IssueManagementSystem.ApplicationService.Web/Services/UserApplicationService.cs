@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using IssueManagementSystem.ApplicationService.Web.ViewModels.User;
+using IssueManagementSystem.DomainModel.Auth;
 using IssueManagementSystem.DomainService.Auth;
 
 namespace IssueManagementSystem.ApplicationService.Web.Services
@@ -35,7 +36,7 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
         /// <param name="userRepository">ユーザーRepository</param>
         public UserApplicationService(IUserManager userManager, IUserRepository userRepository)
         {
-            UserManager = UserManager;
+            UserManager = userManager;
             UserRepository = userRepository;
         }
         #endregion
@@ -58,6 +59,16 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
             }
 
             return userIndexViewModels;
+        }
+
+        /// <summary>
+        /// ユーザーを作成する。
+        /// </summary>
+        /// <param name="viewModel">ユーザー作成ViewModel</param>
+        public void Create(UserCreateViewModel viewModel)
+        {
+            var user = User.CreateByDetailInfo(viewModel.UserId, viewModel.LastName, viewModel.FirstName);
+            UserManager.Create(user, viewModel.Password);
         }
 
         #endregion

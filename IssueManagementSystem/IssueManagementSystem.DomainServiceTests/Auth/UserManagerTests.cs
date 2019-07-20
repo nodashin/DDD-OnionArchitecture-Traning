@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using IssueManagementSystem.DomainServiceTests.TestModules.TestInfrastructures.TestPersistence.TestRepositories;
 using IssueManagementSystem.DomainModel.Auth;
+using IssueManagementSystem.DomainServiceTests.TestModules.TestInfrastructures.TestPlatform.TestSecurity;
 
 namespace IssueManagementSystem.DomainService.Auth.Tests
 {
@@ -16,7 +17,7 @@ namespace IssueManagementSystem.DomainService.Auth.Tests
         /// <summary>
         /// ユーザーマネージャー
         /// </summary>
-        private IUserManager UserManager { get; } = new UserManager(new TestUserRepository(), new TestLoginUserRepository());
+        private IUserManager UserManager { get; } = new UserManager(new TestUserRepository(), new TestLoginUserRepository(), new TestPasswordHasher());
 
         #region メソッドテスト
 
@@ -27,11 +28,10 @@ namespace IssueManagementSystem.DomainService.Auth.Tests
             var user = new User()
             {
                 UserId = "UserId",
-                HashPassword = "HashPassword",
                 LastName = "LastName",
                 FirstName = "FirstName"
             };
-            UserManager.Create(user);
+            UserManager.Create(user, "Password");
         }
         #endregion
 
@@ -46,7 +46,7 @@ namespace IssueManagementSystem.DomainService.Auth.Tests
                 LastName = "LastName",
                 FirstName = "FirstName"
             };
-            UserManager.Create(user);
+            UserManager.EditWithoutPassword(user);
         }
         #endregion
 

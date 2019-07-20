@@ -17,7 +17,8 @@ namespace IssueManagementSystem.ApplicationService.WebTests.TestModules.TestDoma
         /// 何もしない
         /// </summary>
         /// <param name="user">未使用</param>
-        public void Create(User user)
+        /// <param name="password">未使用</param>
+        public void Create(User user, string password)
         {
             
         }

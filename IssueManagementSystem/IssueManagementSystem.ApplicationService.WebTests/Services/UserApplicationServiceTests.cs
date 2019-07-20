@@ -14,7 +14,10 @@ namespace IssueManagementSystem.ApplicationService.Web.Services.Tests
     [TestClass()]
     public class UserApplicationServiceTests
     {
-        private IUserApplicationService UserApplicationService = new UserApplicationService(new TestUserManager(), new TestUserRepository());
+        /// <summary>
+        /// ユーザーApplicationService
+        /// </summary>
+        private IUserApplicationService UserApplicationService { get; } = new UserApplicationService(new TestUserManager(), new TestUserRepository());
 
         #region メソッドテスト
 
@@ -31,6 +34,22 @@ namespace IssueManagementSystem.ApplicationService.Web.Services.Tests
                 Assert.AreEqual("LastName" + loopCount.ToString() + " FirstName" + loopCount, v.UserName);
                 loopCount++;
             }
+        }
+        #endregion
+
+        #region Create
+        [TestMethod()]
+        public void CreateTest()
+        {
+            var viewModel = new UserCreateViewModel()
+            {
+                UserId = "UserId",
+                Password = "Password",
+                PasswordForConfirmation = "Password",
+                LastName = "LastName",
+                FirstName = "FirstName"
+            };
+            UserApplicationService.Create(viewModel);
         }
         #endregion
 

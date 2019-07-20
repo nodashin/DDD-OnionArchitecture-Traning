@@ -12,6 +12,17 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
     /// </summary>
     public interface IUserApplicationService
     {
+        /// <summary>
+        /// ユーザーを検索する。
+        /// </summary>
+        /// <param name="SerchConditionViewModel">ユーザー一覧 - 検索条件ViewModel</param>
+        /// <returns>検索条件に一致するユーザー一覧 - ユーザーViewModel</returns>
         List<UserIndexUserViewModel> Search(UserIndexSerchConditionViewModel SerchConditionViewModel);
+
+        /// <summary>
+        /// ユーザーを作成する。
+        /// </summary>
+        /// <param name="viewModel">ユーザー作成ViewModel</param>
+        void Create(UserCreateViewModel viewModel);
     }
 }

@@ -219,6 +219,8 @@
     <Content Include="Views\Issue\_IssuePartial.cshtml" />
     <Content Include="Views\Issue\Edit.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\User\Create.cshtml" />
+    <Content Include="Views\User\_UserPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

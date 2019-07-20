@@ -22,6 +22,11 @@ namespace IssueManagementSystem.DomainService.Auth
         /// ログインユーザーRepository
         /// </summary>
         public ILoginUserRepository LoginUserRepository { get; }
+
+        /// <summary>
+        /// パスワードハッシャー
+        /// </summary>
+        public IPasswordHasher PasswordHasher { get; }
         #endregion
 
         #region メソッド
@@ -32,10 +37,11 @@ namespace IssueManagementSystem.DomainService.Auth
         /// </summary>
         /// <param name="userRepository">ユーザーRepository</param>
         /// <param name="loginUserRepository">ログインユーザーRepository</param>
-        public UserManager(IUserRepository userRepository, ILoginUserRepository loginUserRepository)
+        public UserManager(IUserRepository userRepository, ILoginUserRepository loginUserRepository, IPasswordHasher passwordHasher)
         {
             UserRepository = userRepository;
             LoginUserRepository = loginUserRepository;
+            PasswordHasher = passwordHasher;
         }
         #endregion
 
@@ -43,8 +49,10 @@ namespace IssueManagementSystem.DomainService.Auth
         /// ユーザーを作成する。
         /// </summary>
         /// <param name="user">作成するユーザー</param>
-        public void Create(User user)
+        /// <param name="password">作成するユーザーのパスワード</param>
+        public void Create(User user, string password)
         {
+            user.HashPassword = PasswordHasher.HashPassword(password);
             UserRepository.Add(user);
         }
 

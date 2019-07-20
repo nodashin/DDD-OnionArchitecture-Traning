@@ -38,12 +38,46 @@ namespace IssueManagementSystem.DomainModel.Auth
         #endregion
 
         #region メソッド
+
+        #region コンストラクタ
+        /// <summary>
+        /// コンストラクタ(EF用)
+        /// </summary>
+        public User() { }
+
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        /// <param name="userId">ユーザーID</param>
+        /// <param name="lastName">名字</param>
+        /// <param name="firstName">名前</param>
+        private User(string userId, string lastName, string firstName)
+        {
+            UserId = userId;
+            LastName = lastName;
+            FirstName = firstName;
+        }
+        #endregion
+
         /// <summary>
         /// ユーザー名を取得する。
         /// </summary>
         /// <returns>ユーザー名</returns>
         public string GetUserName()
             => LastName + " " + FirstName;
+
+        #region Factories
+        /// <summary>
+        /// 詳細情報からユーザーを作成する。
+        /// </summary>
+        /// <param name="userId">ユーザーID</param>
+        /// <param name="lastName">名字</param>
+        /// <param name="firstName">名前</param>
+        /// <returns>ユーザー</returns>
+        public static User CreateByDetailInfo(string userId, string lastName, string firstName)
+            => new User(userId, lastName, firstName);
+        #endregion
+
         #endregion
     }
 }

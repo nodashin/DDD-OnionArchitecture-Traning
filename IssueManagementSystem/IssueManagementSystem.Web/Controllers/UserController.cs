@@ -52,5 +52,29 @@ namespace IssueManagementSystem.Web.Controllers
         }
         #endregion
 
+        #region ユーザー作成
+        /// <summary>
+        /// ユーザー作成Viewを表示する。
+        /// </summary>
+        /// <returns>ユーザー作成View</returns>
+        public ActionResult Create()
+        {
+            var viewModel = new UserCreateViewModel();
+            return View(viewModel);
+        }
+
+        /// <summary>
+        /// ユーザーを作成する。
+        /// </summary>
+        /// <param name="viewModel">ユーザー作成ViewModel</param>
+        /// <returns>ユーザー一覧View</returns>
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(UserCreateViewModel viewModel)
+        {
+            UserApplicationService.Create(viewModel);
+            return RedirectToAction("Index");
+        }
+        #endregion
     }
 }

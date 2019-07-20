@@ -17,7 +17,8 @@ namespace IssueManagementSystem.DomainService.Auth
         /// ユーザーを作成する。
         /// </summary>
         /// <param name="user">作成するユーザー</param>
-        void Create(User user);
+        /// <param name="password">作成するユーザーのパスワード</param>
+        void Create(User user, string password);
 
         /// <summary>
         /// ユーザーのパスワード以外を修正する。
