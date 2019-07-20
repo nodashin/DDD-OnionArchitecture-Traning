@@ -11,7 +11,7 @@ namespace IssueManagementSystem.ApplicationService.WebTests.TestModules.TestDoma
     /// <summary>
     /// テスト用ユーザーマネージャー
     /// </summary>
-    public class TestUserManager : IUserManager
+    internal class TestUserManager : IUserManager
     {
         /// <summary>
         /// 何もしない

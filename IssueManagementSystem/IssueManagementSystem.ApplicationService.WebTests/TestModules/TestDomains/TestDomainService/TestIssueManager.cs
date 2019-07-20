@@ -11,7 +11,7 @@ namespace IssueManagementSystem.ApplicationService.WebTests.TestModules.TestDoma
     /// <summary>
     /// テスト用課題マネージャー
     /// </summary>
-    public class TestIssueManager : IIssueManager
+    internal class TestIssueManager : IIssueManager
     {
         /// <summary>
         /// 何もしない
