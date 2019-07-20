@@ -8,10 +8,11 @@
 
 |フォルダ|役割|
 |-|-|
-|PresentationLayer|Presentation層に位置するプロジェクトを格納する。|
-|InfrastructureLayer|Infrastructure層に位置するプロジェクトを格納する。|
-|ApplicationLayer|Application Service層に位置するプロジェクトを格納する。|
-|DomainLayer|DomainService層及びDomainModel層に位置するプロジェクトを格納する。|
+|Presentations|Presentation層に位置するプロジェクトを格納する。|
+|Infrastructures|Infrastructure層に位置するプロジェクトを格納する。|
+|Applications|Application Service層に位置するプロジェクトを格納する。|
+|Domains|DomainService層及びDomainModel層に位置するプロジェクトを格納する。|
+|Tests|MsTestプロジェクト。|
 
 ## ソリューション構成
 
