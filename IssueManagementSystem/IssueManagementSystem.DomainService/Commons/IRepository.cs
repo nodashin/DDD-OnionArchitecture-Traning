@@ -18,7 +18,7 @@ namespace IssueManagementSystem.DomainService.Commons
         /// 全DomainModelを取得する。
         /// </summary>
         /// <returns>全DomainModel</returns>
-        IQueryable<TDomainModel> FindAll();
+        IEnumerable<TDomainModel> FindAll();
 
         /// <summary>
         /// IDからDmainModelを取得する。

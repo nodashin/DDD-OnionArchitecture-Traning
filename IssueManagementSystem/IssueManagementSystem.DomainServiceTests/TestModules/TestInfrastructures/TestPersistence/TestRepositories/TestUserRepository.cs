@@ -13,6 +13,11 @@ namespace IssueManagementSystem.DomainServiceTests.TestModules.TestInfrastructur
     /// </summary>
     internal class TestUserRepository : IUserRepository
     {
+        public IEnumerable<User> FindAll()
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// IDに「Test」を指定した場合のみユーザーを返す。
         /// </summary>
@@ -57,11 +62,6 @@ namespace IssueManagementSystem.DomainServiceTests.TestModules.TestInfrastructur
         public void Remove(string id)
         {
 
-        }
-
-        public IQueryable<User> FindAll()
-        {
-            throw new NotImplementedException();
         }
     }
 }

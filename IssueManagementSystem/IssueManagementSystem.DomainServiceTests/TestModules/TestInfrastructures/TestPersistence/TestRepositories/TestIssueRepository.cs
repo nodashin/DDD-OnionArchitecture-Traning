@@ -13,7 +13,7 @@ namespace IssueManagementSystem.DomainServiceTests.TestModules.TestInfrastructur
     /// </summary>
     internal class TestIssueRepository : IIssueRepository
     {
-        public IQueryable<Issue> FindAll()
+        public IEnumerable<Issue> FindAll()
         {
             throw new NotImplementedException();
         }

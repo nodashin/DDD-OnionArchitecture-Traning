@@ -27,7 +27,7 @@ namespace IssueManagementSystem.Persistence.Repositories
         /// 全ユーザーを取得する。
         /// </summary>
         /// <returns>全ユーザー</returns>
-        public IQueryable<User> FindAll()
+        public IEnumerable<User> FindAll()
         {
             return Db.Users;
         }

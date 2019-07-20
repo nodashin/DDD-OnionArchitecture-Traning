@@ -27,7 +27,7 @@ namespace IssueManagementSystem.Persistence.Repositories
         /// 全課題を取得する。
         /// </summary>
         /// <returns>全課題</returns>
-        public IQueryable<Issue> FindAll()
+        public IEnumerable<Issue> FindAll()
         {
             return Db.Issues;
         }

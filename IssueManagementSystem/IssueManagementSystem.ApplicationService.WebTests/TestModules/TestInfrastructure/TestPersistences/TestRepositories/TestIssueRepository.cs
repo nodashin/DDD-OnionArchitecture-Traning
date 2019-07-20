@@ -13,9 +13,22 @@ namespace IssueManagementSystem.ApplicationService.WebTests.TestModules.TestInfr
     /// </summary>
     internal class TestIssueRepository : IIssueRepository
     {
-        public IQueryable<Issue> FindAll()
+        /// <summary>
+        /// テスト用課題を返す。
+        /// </summary>
+        /// <returns>テスト用課題</returns>
+        public IEnumerable<Issue> FindAll()
         {
-            throw new NotImplementedException();
+            for (int i = 1; i <= 5; i++)
+            {
+                var issue = new Issue()
+                {
+                    IssueId = i,
+                    Title = "Title" + i.ToString(),
+                    Content = "Content" + i.ToString(),
+                };
+                yield return issue;
+            }
         }
 
         public Issue FindById(int id)
