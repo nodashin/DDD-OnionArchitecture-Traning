@@ -53,6 +53,17 @@ namespace IssueManagementSystem.ApplicationService.Web.Services.Tests
         }
         #endregion
 
+        #region GetUserEditViewModel
+        [TestMethod()]
+        public void GetUserEditViewModelTest()
+        {
+            var viewMode = UserApplicationService.GetUserEditViewModel("Test");
+            Assert.AreEqual("Test", viewMode.UserId);
+            Assert.AreEqual("LastName", viewMode.LastName);
+            Assert.AreEqual("FirstName", viewMode.FirstName);
+        }
+        #endregion
+
         #endregion
     }
 }

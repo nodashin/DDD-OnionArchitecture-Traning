@@ -76,5 +76,18 @@ namespace IssueManagementSystem.Web.Controllers
             return RedirectToAction("Index");
         }
         #endregion
+
+        #region ユーザー編集・削除
+        /// <summary>
+        /// ユーザー編集ViewModelを表示する。
+        /// </summary>
+        /// <param name="userId">ユーザーID</param>
+        /// <returns>ユーザー修正ViewModel</returns>
+        public ActionResult Edit(string userId)
+        {
+            var viewModel = UserApplicationService.GetUserEditViewModel(userId);
+            return View(viewModel);
+        }
+        #endregion
     }
 }

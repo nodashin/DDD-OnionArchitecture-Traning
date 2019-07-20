@@ -81,6 +81,7 @@
     <Compile Include="ViewModels\Issue\IssueIndexViewModels.cs" />
     <Compile Include="ViewModels\Issue\IssueViewModel.cs" />
     <Compile Include="ViewModels\User\UserCreateViewModel.cs" />
+    <Compile Include="ViewModels\User\UserEditViewModel.cs" />
     <Compile Include="ViewModels\User\UserIndexViewModels.cs" />
     <Compile Include="ViewModels\User\UserViewModel.cs" />
   </ItemGroup>

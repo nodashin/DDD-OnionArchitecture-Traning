@@ -71,6 +71,19 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
             UserManager.Create(user, viewModel.Password);
         }
 
+        #region ViewModel取得
+        /// <summary>
+        /// ユーザー編集ViewModelを取得する。
+        /// </summary>
+        /// <param name="userId">ユーザーID</param>
+        /// <returns>ユーザー編集ViewModel</returns>
+        public UserEditViewModel GetUserEditViewModel(string userId)
+        {
+            var user = UserRepository.FindById(userId);
+            return UserEditViewModel.CreateByUser(user);
+        }
+        #endregion
+
         #endregion
     }
 }

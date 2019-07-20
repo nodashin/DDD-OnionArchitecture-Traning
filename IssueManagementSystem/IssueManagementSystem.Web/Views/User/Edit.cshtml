@@ -1,0 +1,25 @@
+﻿@model IssueManagementSystem.ApplicationService.Web.ViewModels.User.UserEditViewModel
+
+@{
+    ViewBag.Title = "ユーザー編集";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummaryAlert()
+
+    @Html.Partial("_UserPartial", Model)
+
+    <button class="btn btn-primary">作成</button>
+    @Html.ActionLink("戻る", "Index", "User", new { @class = "btn btn-outline-secondary" })
+}
+
+@section scripts
+{
+    <script>
+        $('#UserId').attr('readonly', true);
+    </script>
+}

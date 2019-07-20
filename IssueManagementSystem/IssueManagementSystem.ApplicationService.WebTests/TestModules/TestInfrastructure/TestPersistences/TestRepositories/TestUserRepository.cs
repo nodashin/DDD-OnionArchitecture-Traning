@@ -32,9 +32,23 @@ namespace IssueManagementSystem.ApplicationService.WebTests.TestModules.TestInfr
             }
         }
 
+        /// <summary>
+        /// テスト用ユーザーを返す。
+        /// </summary>
+        /// <param name="id">ユーザーID。「Test」指定時にテスト用ユーザーを返す。</param>
+        /// <returns>ユーザーIDに「Test」を指定した場合はテストユーザー、それ以外はNULLを返す。</returns>
         public User FindById(string id)
         {
-            throw new NotImplementedException();
+            if (id != "Test")
+                return null;
+
+            return new User()
+            {
+                UserId = id,
+                HashPassword = "HashPassword",
+                LastName = "LastName",
+                FirstName = "FirstName"
+            };
         }
 
         public void Add(User model)
