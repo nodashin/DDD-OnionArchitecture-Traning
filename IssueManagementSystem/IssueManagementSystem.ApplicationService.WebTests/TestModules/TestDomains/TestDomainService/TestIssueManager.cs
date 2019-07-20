@@ -28,7 +28,7 @@ namespace IssueManagementSystem.ApplicationService.WebTests.TestModules.TestDoma
         /// <param name="issue">未使用</param>
         public void Edit(Issue issue)
         {
-            throw new NotImplementedException();
+            
         }
 
         /// <summary>
@@ -37,7 +37,7 @@ namespace IssueManagementSystem.ApplicationService.WebTests.TestModules.TestDoma
         /// <param name="issueId">未使用</param>
         public void Delete(int issueId)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

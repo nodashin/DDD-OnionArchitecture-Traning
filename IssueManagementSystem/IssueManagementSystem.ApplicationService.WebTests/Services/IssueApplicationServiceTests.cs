@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using IssueManagementSystem.ApplicationService.WebTests.TestModules.TestDomains.TestDomainService;
 using IssueManagementSystem.ApplicationService.WebTests.TestModules.TestInfrastructure.TestPersistences.TestRepositories;
+using IssueManagementSystem.ApplicationService.Web.ViewModels.Issue;
 
 namespace IssueManagementSystem.ApplicationService.Web.Services.Tests
 {
@@ -24,7 +25,15 @@ namespace IssueManagementSystem.ApplicationService.Web.Services.Tests
         [TestMethod()]
         public void SearchTest()
         {
-            Assert.Fail();
+            var viewModels = IssueApplicationService.Search(new IssueIndexSearchConditionViewModel());
+            Assert.AreEqual(5, viewModels.Count);
+            int loopCount = 1;
+            foreach (var viewModel in viewModels)
+            {
+                Assert.AreEqual(loopCount, viewModel.IssueId);
+                Assert.AreEqual("Title" + loopCount, viewModel.Title);
+                loopCount++;
+            }
         }
         #endregion
 
@@ -32,7 +41,12 @@ namespace IssueManagementSystem.ApplicationService.Web.Services.Tests
         [TestMethod()]
         public void CreateTest()
         {
-            Assert.Fail();
+            var viewModel = new IssueCreateViewModel()
+            {
+                Title = "Title",
+                Content = "Content"
+            };
+            IssueApplicationService.Create(viewModel);
         }
         #endregion
 
@@ -40,7 +54,13 @@ namespace IssueManagementSystem.ApplicationService.Web.Services.Tests
         [TestMethod()]
         public void EditTest()
         {
-            Assert.Fail();
+            var viewModel = new IssueEditViewModel()
+            {
+                IssueId = 1,
+                Title = "Title",
+                Content = "Content"
+            };
+            IssueApplicationService.Edit(viewModel);
         }
         #endregion
 
@@ -48,7 +68,7 @@ namespace IssueManagementSystem.ApplicationService.Web.Services.Tests
         [TestMethod()]
         public void DeleteTest()
         {
-            Assert.Fail();
+            IssueApplicationService.Delete(1);
         }
         #endregion
 
@@ -56,7 +76,10 @@ namespace IssueManagementSystem.ApplicationService.Web.Services.Tests
         [TestMethod()]
         public void GetIssueEditViewModelTest()
         {
-            Assert.Fail();
+            var viewModel = IssueApplicationService.GetIssueEditViewModel(1);
+            Assert.AreEqual(1, viewModel.IssueId);
+            Assert.AreEqual("Title1", viewModel.Title);
+            Assert.AreEqual("Content1", viewModel.Content);
         }
         #endregion
 

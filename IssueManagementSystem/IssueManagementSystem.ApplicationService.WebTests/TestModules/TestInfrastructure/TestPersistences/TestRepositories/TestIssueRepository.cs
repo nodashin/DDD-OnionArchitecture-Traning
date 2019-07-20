@@ -31,9 +31,22 @@ namespace IssueManagementSystem.ApplicationService.WebTests.TestModules.TestInfr
             }
         }
 
+        /// <summary>
+        /// 課題IDが1のときだけ課題を返す。
+        /// </summary>
+        /// <param name="id">課題ID。1のときだけ課題を返す。</param>
+        /// <returns>課題IDが1のときだけ課題を返す。</returns>
         public Issue FindById(int id)
         {
-            throw new NotImplementedException();
+            if (id != 1)
+                return null;
+
+            return new Issue()
+            {
+                IssueId = id,
+                Title = "Title" + id.ToString(),
+                Content = "Content" + id.ToString()
+            };
         }
 
         public void Add(Issue model)
