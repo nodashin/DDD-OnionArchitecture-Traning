@@ -59,9 +59,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\HomeApplicationServiceTests.cs" />
     <Compile Include="Services\IssueApplicationServiceTests.cs" />
+    <Compile Include="Services\UserApplicationServiceTests.cs" />
     <Compile Include="TestModules\TestDomains\TestDomainService\TestAuthManager.cs" />
     <Compile Include="TestModules\TestDomains\TestDomainService\TestIssueManager.cs" />
+    <Compile Include="TestModules\TestDomains\TestDomainService\TestUserManager.cs" />
     <Compile Include="TestModules\TestInfrastructure\TestPersistences\TestRepositories\TestIssueRepository.cs" />
+    <Compile Include="TestModules\TestInfrastructure\TestPersistences\TestRepositories\TestUserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
