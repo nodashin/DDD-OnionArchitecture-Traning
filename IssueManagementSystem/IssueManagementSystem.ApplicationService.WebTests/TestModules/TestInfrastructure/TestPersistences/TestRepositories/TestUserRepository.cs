@@ -13,9 +13,23 @@ namespace IssueManagementSystem.ApplicationService.WebTests.TestModules.TestInfr
     /// </summary>
     internal class TestUserRepository : IUserRepository
     {
+        /// <summary>
+        /// テスト用ユーザーを返す。
+        /// </summary>
+        /// <returns>テスト用ユーザー</returns>
         public IEnumerable<User> FindAll()
         {
-            throw new NotImplementedException();
+            for (int i = 1; i <= 5; i++)
+            {
+                var user = new User()
+                {
+                    UserId = "UserId" + i.ToString(),
+                    HashPassword = "HashPassword" + i.ToString(),
+                    LastName = "LastName" + i.ToString(),
+                    FirstName = "FirstName" + i.ToString()
+                };
+                yield return user;
+            }
         }
 
         public User FindById(string id)
