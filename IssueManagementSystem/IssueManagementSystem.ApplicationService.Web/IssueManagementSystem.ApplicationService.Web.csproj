@@ -70,6 +70,8 @@
     <Compile Include="Services\IHomeApplicationService.cs" />
     <Compile Include="Services\IIssueApplicationService.cs" />
     <Compile Include="Services\IssueApplicationService.cs" />
+    <Compile Include="Services\IUserApplicationService.cs" />
+    <Compile Include="Services\UserApplicationService.cs" />
     <Compile Include="ViewModels\Commons\SearchConditionViewModel.cs" />
     <Compile Include="ViewModels\Home\LoggedInMenuViewModel.cs" />
     <Compile Include="ViewModels\Home\LoginViewModel.cs" />

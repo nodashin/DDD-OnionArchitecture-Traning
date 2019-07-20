@@ -29,6 +29,7 @@ namespace IssueManagementSystem.Platform.IoC
             //ApplicationService
             kernel.Bind<IHomeApplicationService>().To<HomeApplicationService>();
             kernel.Bind<IIssueApplicationService>().To<IssueApplicationService>();
+            kernel.Bind<IUserApplicationService>().To<UserApplicationService>();
 
             //DomainService
             kernel.Bind<IAuthManager>().To<AuthManager>();
