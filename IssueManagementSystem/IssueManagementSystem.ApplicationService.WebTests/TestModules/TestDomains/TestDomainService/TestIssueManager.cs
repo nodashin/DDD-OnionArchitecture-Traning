@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using IssueManagementSystem.DomainModel.Issue;
 using IssueManagementSystem.DomainService.Issue;
 
-namespace IssueManagementSystem.ApplicationService.WebTests.TestModules.TestDomainLayer.TestDomainServices
+namespace IssueManagementSystem.ApplicationService.WebTests.TestModules.TestDomains.TestDomainService
 {
     /// <summary>
     /// テスト用課題マネージャー

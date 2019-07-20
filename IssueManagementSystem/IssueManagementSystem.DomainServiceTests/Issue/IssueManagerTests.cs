@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using IssueManagementSystem.DomainServiceTests.TestModules.TestInfrastructureLayer.TestPersistence.TestRepositories;
+using IssueManagementSystem.DomainServiceTests.TestModules.TestInfrastructures.TestPersistence.TestRepositories;
 
 namespace IssueManagementSystem.DomainService.Issue.Tests
 {

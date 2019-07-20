@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using IssueManagementSystem.DomainModel.Auth;
 using IssueManagementSystem.DomainService.Auth;
 
-namespace IssueManagementSystem.ApplicationService.WebTests.TestModules.TestDomainLayer.TestDomainServices
+namespace IssueManagementSystem.ApplicationService.WebTests.TestModules.TestDomains.TestDomainService
 {
     /// <summary>
     /// テスト用認証マネージャー

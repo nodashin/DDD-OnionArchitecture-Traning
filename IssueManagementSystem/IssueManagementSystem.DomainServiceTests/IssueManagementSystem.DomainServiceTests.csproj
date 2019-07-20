@@ -60,11 +60,11 @@
     <Compile Include="Auth\UserManagerTests.cs" />
     <Compile Include="Issue\IssueManagerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestModules\TestInfrastructureLayer\TestPersistence\TestRepositories\TestIssueRepository.cs" />
-    <Compile Include="TestModules\TestInfrastructureLayer\TestPersistence\TestRepositories\TestLoginUserRepository.cs" />
-    <Compile Include="TestModules\TestInfrastructureLayer\TestPersistence\TestRepositories\TestUserRepository.cs" />
-    <Compile Include="TestModules\TestInfrastructureLayer\TestPlatform\TestSecurity\TestMyAuthentication.cs" />
-    <Compile Include="TestModules\TestInfrastructureLayer\TestPlatform\TestSecurity\TestPasswordHasher.cs" />
+    <Compile Include="TestModules\TestInfrastructures\TestPersistence\TestRepositories\TestIssueRepository.cs" />
+    <Compile Include="TestModules\TestInfrastructures\TestPersistence\TestRepositories\TestLoginUserRepository.cs" />
+    <Compile Include="TestModules\TestInfrastructures\TestPersistence\TestRepositories\TestUserRepository.cs" />
+    <Compile Include="TestModules\TestInfrastructures\TestPlatform\TestSecurity\TestMyAuthentication.cs" />
+    <Compile Include="TestModules\TestInfrastructures\TestPlatform\TestSecurity\TestPasswordHasher.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using IssueManagementSystem.DomainService.Auth;
 
-namespace IssueManagementSystem.DomainServiceTests.TestModules.TestInfrastructureLayer.TestPlatform.TestSecurity
+namespace IssueManagementSystem.DomainServiceTests.TestModules.TestInfrastructures.TestPlatform.TestSecurity
 {
     /// <summary>
     /// テスト用パスワードハッシャー

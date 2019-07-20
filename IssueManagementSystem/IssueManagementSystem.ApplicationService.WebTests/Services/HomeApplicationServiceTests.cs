@@ -5,8 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using IssueManagementSystem.ApplicationService.WebTests.TestModules.TestDomainLayer.TestDomainServices;
 using IssueManagementSystem.ApplicationService.Web.ViewModels.Home;
+using IssueManagementSystem.ApplicationService.WebTests.TestModules.TestDomains.TestDomainService;
 
 namespace IssueManagementSystem.ApplicationService.Web.Services.Tests
 {

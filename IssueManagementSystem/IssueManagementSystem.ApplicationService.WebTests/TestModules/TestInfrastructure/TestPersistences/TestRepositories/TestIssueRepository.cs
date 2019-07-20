@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using IssueManagementSystem.DomainModel.Issue;
 using IssueManagementSystem.DomainService.Issue;
 
-namespace IssueManagementSystem.ApplicationService.WebTests.TestModules.TestInfrastructures.TestPersistences.TestRepositories
+namespace IssueManagementSystem.ApplicationService.WebTests.TestModules.TestInfrastructure.TestPersistences.TestRepositories
 {
     /// <summary>
     /// テスト用課題Repository
