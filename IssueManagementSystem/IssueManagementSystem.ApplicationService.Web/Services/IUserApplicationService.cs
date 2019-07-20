@@ -26,6 +26,18 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
         void Create(UserCreateViewModel viewModel);
 
         /// <summary>
+        /// ユーザーを編集する。
+        /// </summary>
+        /// <param name="viewModel">ユーザー編集ViewModel</param>
+        void Edit(UserEditViewModel viewModel);
+
+        /// <summary>
+        /// ユーザーを削除する。
+        /// </summary>
+        /// <param name="userId">ユーザーID</param>
+        void Delete(string userId);
+
+        /// <summary>
         /// ユーザー編集ViewModelを取得する。
         /// </summary>
         /// <param name="userId">ユーザーID</param>

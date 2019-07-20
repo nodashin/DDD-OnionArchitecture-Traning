@@ -71,6 +71,25 @@ namespace IssueManagementSystem.ApplicationService.Web.Services
             UserManager.Create(user, viewModel.Password);
         }
 
+        /// <summary>
+        /// ユーザーを編集する。
+        /// </summary>
+        /// <param name="viewModel">ユーザー編集ViewModel</param>
+        public void Edit(UserEditViewModel viewModel)
+        {
+            var user = User.CreateByDetailInfo(viewModel.UserId, viewModel.LastName, viewModel.FirstName);
+            UserManager.EditWithoutPassword(user);
+        }
+
+        /// <summary>
+        /// ユーザーを削除する。
+        /// </summary>
+        /// <param name="userId">ユーザーID</param>
+        public void Delete(string userId)
+        {
+            UserManager.Delete(userId);
+        }
+
         #region ViewModel取得
         /// <summary>
         /// ユーザー編集ViewModelを取得する。

@@ -15,6 +15,11 @@ namespace IssueManagementSystem.ApplicationService.Web.ViewModels.User
 
         #region コンストラクタ
         /// <summary>
+        /// コンストラクタ(View用)
+        /// </summary>
+        public UserEditViewModel() { }
+
+        /// <summary>
         /// コンストラクタ
         /// </summary>
         /// <param name="user">ユーザー</param>

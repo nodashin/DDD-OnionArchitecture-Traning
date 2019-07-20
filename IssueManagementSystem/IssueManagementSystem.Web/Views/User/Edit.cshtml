@@ -14,7 +14,7 @@
     @Html.Partial("_UserPartial", Model)
 
     <button class="btn btn-primary">修正</button>
-    <button class="btn btn-danger" formaction="/Issue/Delete/@Model.UserId">削除</button>
+    <button class="btn btn-danger" formaction="/User/Delete/@Model.UserId">削除</button>
     @Html.ActionLink("戻る", "Index", "User", new { @class = "btn btn-outline-secondary" })
 }
 

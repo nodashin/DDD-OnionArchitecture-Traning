@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using IssueManagementSystem.ApplicationService.WebTests.TestModules.TestDomains.TestDomainService;
 using IssueManagementSystem.ApplicationService.WebTests.TestModules.TestInfrastructure.TestPersistences.TestRepositories;
 using IssueManagementSystem.ApplicationService.Web.ViewModels.User;
+using IssueManagementSystem.DomainModel.Auth;
 
 namespace IssueManagementSystem.ApplicationService.Web.Services.Tests
 {
@@ -50,6 +51,29 @@ namespace IssueManagementSystem.ApplicationService.Web.Services.Tests
                 FirstName = "FirstName"
             };
             UserApplicationService.Create(viewModel);
+        }
+        #endregion
+
+        #region Edit
+        [TestMethod()]
+        public void EditTest()
+        {
+            var user = new User()
+            {
+                UserId = "UserId",
+                LastName = "LastName",
+                FirstName = "FirstName"
+            };
+            var viewModel = UserEditViewModel.CreateByUser(user);
+            UserApplicationService.Edit(viewModel);
+        }
+        #endregion
+
+        #region Delete
+        [TestMethod()]
+        public void DeleteTest()
+        {
+            UserApplicationService.Delete("UserId");
         }
         #endregion
 

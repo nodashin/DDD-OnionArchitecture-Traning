@@ -72,6 +72,9 @@ namespace IssueManagementSystem.Web.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(UserCreateViewModel viewModel)
         {
+            if (!ModelState.IsValid)
+                return View(viewModel);
+
             UserApplicationService.Create(viewModel);
             return RedirectToAction("Index");
         }
@@ -87,6 +90,38 @@ namespace IssueManagementSystem.Web.Controllers
         {
             var viewModel = UserApplicationService.GetUserEditViewModel(userId);
             return View(viewModel);
+        }
+
+        /// <summary>
+        /// ユーザーを編集する。
+        /// </summary>
+        /// <param name="viewModel">ユーザー編集ViewModel</param>
+        /// <returns>ユーザー一覧View</returns>
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(UserEditViewModel viewModel)
+        {
+            if (!ModelState.IsValid)
+                return View(viewModel);
+
+            UserApplicationService.Edit(viewModel);
+            return RedirectToAction("Index");
+        }
+
+        /// <summary>
+        /// ユーザーを削除する。
+        /// </summary>
+        /// <param name="userId">ユーザーID</param>
+        /// <returns>ユーザー一覧View</returns>
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Delete(string userId)
+        {
+            if (!ModelState.IsValid)
+                return View("Edit");
+
+            UserApplicationService.Delete(userId);
+            return RedirectToAction("Index");
         }
         #endregion
     }
