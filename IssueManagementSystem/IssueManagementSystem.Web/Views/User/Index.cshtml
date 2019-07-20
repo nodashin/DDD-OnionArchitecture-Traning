@@ -1,0 +1,34 @@
+﻿@model IssueManagementSystem.ApplicationService.Web.ViewModels.User.UserIndexViewModel
+
+@{
+    ViewBag.Title = "ユーザー一覧";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Search", "User"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummaryAlert()
+
+    <button class="btn btn-primary">検索</button>
+}
+
+<hr />
+<table class="table table-striped table-hover">
+    <thead class="thead-light">
+        <tr>
+            <th>@Html.DisplayNameFor(m => m.Users.First().UserId)</th>
+            <th>@Html.DisplayNameFor(m => m.Users.First().UserName)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model.Users)
+        {
+            <tr>
+                <td>@Html.ActionLink(user.UserId.ToString(), "Edit", new { UserId = user.UserId })</td>
+                <td>@Html.DisplayFor(m => user.UserName)</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -38,9 +38,12 @@ namespace IssueManagementSystem.Web.Controllers
         }
 
         /// <summary>
-        /// 検索する。
+        /// 課題を検索する。
         /// </summary>
+        /// <param name="searchConditionViewModel">課題一覧 - 検索条件ViewModel</param>
         /// <returns>課題一覧View</returns>
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Search(IssueIndexSearchConditionViewModel searchConditionViewModel)
         {
             var issueViewModels = IssueApplicationService.Search(searchConditionViewModel);

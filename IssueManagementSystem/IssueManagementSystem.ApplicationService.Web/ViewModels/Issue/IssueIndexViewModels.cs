@@ -30,6 +30,8 @@ namespace IssueManagementSystem.ApplicationService.Web.ViewModels.Issue
         #endregion
 
         #region メソッド
+
+        #region コンストラクタ
         /// <summary>
         /// コンストラクタ
         /// </summary>
@@ -40,16 +42,20 @@ namespace IssueManagementSystem.ApplicationService.Web.ViewModels.Issue
             SearchCondition = searchConditionViewModel;
             Issues = issueViewModels;
         }
+        #endregion
 
+        #region Factory
         /// <summary>
         /// 子ViewModelを元に課題一覧ViewModelを生成する。
         /// </summary>
-        /// <param name="searchConditionViewModel">検索条件ViewModel</param>
-        /// <param name="issueViewModels">課題ViewModel群</param>
+        /// <param name="searchConditionViewModel">課題一覧 - 検索条件ViewModel</param>
+        /// <param name="issueViewModels">課題一覧 - 課題ViewModel</param>
         /// <returns></returns>
         public static IssueIndexViewModel CreateByChildViewModels(IssueIndexSearchConditionViewModel searchConditionViewModel, 
                                                                   List<IssueIndexIssueViewModel> issueViewModels)
             => new IssueIndexViewModel(searchConditionViewModel, issueViewModels);
+        #endregion
+
         #endregion
     }
     #endregion

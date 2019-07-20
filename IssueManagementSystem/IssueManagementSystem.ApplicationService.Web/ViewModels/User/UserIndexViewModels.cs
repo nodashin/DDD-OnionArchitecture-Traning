@@ -9,13 +9,16 @@ using IssueManagementSystem.ApplicationService.Web.ViewModels.Commons;
 namespace IssueManagementSystem.ApplicationService.Web.ViewModels.User
 {
     #region ユーザー一覧ViewModel
+    /// <summary>
+    /// ユーザー一覧ViewModel
+    /// </summary>
     public class UserIndexViewModel
     {
         #region プロパティ
         /// <summary>
         /// 検索条件
         /// </summary>
-        public UserIndexSerchConditionViewModel SerchCondition { get; set; }
+        public UserIndexSerchConditionViewModel SearchCondition { get; set; }
 
         /// <summary>
         /// ユーザー群
@@ -24,6 +27,37 @@ namespace IssueManagementSystem.ApplicationService.Web.ViewModels.User
         /// データが0件でもnullにはならず、Countが0の状態となる。
         /// </remarks>
         public List<UserIndexUserViewModel> Users { get; set; }
+        #endregion
+
+        #region メソッド
+
+        #region コンストラクタ
+        /// <summary>
+        /// コンストラクタ
+        /// </summary>
+        /// <param name="serchConditionViewModel">検索条件</param>
+        /// <param name="userViewModels">ユーザー群</param>
+        private UserIndexViewModel(UserIndexSerchConditionViewModel serchConditionViewModel, List<UserIndexUserViewModel> userViewModels)
+        {
+            SearchCondition = serchConditionViewModel;
+            Users = userViewModels;
+        }
+        #endregion
+
+        #region Factory
+        /// <summary>
+        /// 子ViewModel群を元にユーザー一覧ViewModelを生成する。
+        /// </summary>
+        /// <param name="serchConditionViewModel">ユーザー一覧 - 検索条件ViewModel</param>
+        /// <param name="userViewModels">ユーザー一覧 - ユーザーViewModel群</param>
+        /// <returns>ユーザー一覧ViewModel</returns>
+        public static UserIndexViewModel CreateByChildViewModels(UserIndexSerchConditionViewModel serchConditionViewModel, 
+                                                                 List<UserIndexUserViewModel> userViewModels)
+        {
+            return new UserIndexViewModel(serchConditionViewModel, userViewModels);
+        }
+        #endregion
+
         #endregion
     }
     #endregion
